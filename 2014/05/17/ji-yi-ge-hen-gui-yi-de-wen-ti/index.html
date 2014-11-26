@@ -126,10 +126,7 @@ Picasso.with(context).load('http://i.imgur.com/DvpvklR.png').into(imageView);
 
                             }
                         });
-</code></pre><p>在</p>
-<figure class="highlight OnBitmapLoaded```得到bitmap，然后进行处理."><figcaption><span>说道这里大家都以为没有问题了，但是你会发现</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当你手机下载一张图之后本应该要显示的却没有，然而你拖动屏幕之后就有显示了.这里如果你调试时你会发现，第一次这个</div></pre></td></tr></table></figure>
-
-<p>OnBitmapLoadeded```根本没有调用.</p>
+</code></pre><p>在<code>OnBitmapLoaded</code>得到bitmap，然后进行处理. 说道这里大家都以为没有问题了，但是你会发现<br>当你手机下载一张图之后本应该要显示的却没有，然而你拖动屏幕之后就有显示了.这里如果你调试时你会发现，第一次这个<code>OnBitmapLoadeded</code>根本没有调用.</p>
 <p>这个问题研究了好久，最后在<a href="https://github.com/square/picasso/issues/251" target="_blank" rel="external">https://github.com/square/picasso/issues/251</a>上找到了答案</p>
 <blockquote>
 <p>Your CustomTarget instance gets gc’ed. You need to hold a strong reference to it.</p>
@@ -226,7 +223,7 @@ Picasso.with(context).load('http://i.imgur.com/DvpvklR.png').into(imageView);
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://fenjuly.com/2014/05/17/ji-yi-ge-hen-gui-yi-de-wen-ti/" data-id="i1mcykvmmr69c333" class="article-share-link">Share</a>
+        <a data-url="http://fenjuly.com/2014/05/17/ji-yi-ge-hen-gui-yi-de-wen-ti/" data-id="fl998rhi5u21x97f" class="article-share-link">Share</a>
       
 
       
