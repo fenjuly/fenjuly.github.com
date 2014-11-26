@@ -3,17 +3,38 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/11 | FeNJuly&#39;s Blog</title>
+  <title>Java多线程下载库 | FeNJuly&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="next line of code">
-<meta property="og:type" content="website">
-<meta property="og:title" content="FeNJuly's Blog">
-<meta property="og:url" content="http://fenjuly.com/archives/2014/11/">
+  <meta name="description" content="这几天研究了代码家的https://github.com/daimajia/java-multithread-downloader这个多线程下载库。学习到了好多，感谢！
+就我的学习而言，有下面几点:
+
+总体思路:
+将文件分为不同的块交给不同的线程去执行。
+
+具体做法:
+先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java多线程下载库">
+<meta property="og:url" content="http://fenjuly.com/2014/11/26/java-multithread-downloader/">
 <meta property="og:site_name" content="FeNJuly's Blog">
-<meta property="og:description" content="next line of code">
+<meta property="og:description" content="这几天研究了代码家的https://github.com/daimajia/java-multithread-downloader这个多线程下载库。学习到了好多，感谢！
+就我的学习而言，有下面几点:
+
+总体思路:
+将文件分为不同的块交给不同的线程去执行。
+
+具体做法:
+先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="FeNJuly's Blog">
-<meta name="twitter:description" content="next line of code">
+<meta name="twitter:title" content="Java多线程下载库">
+<meta name="twitter:description" content="这几天研究了代码家的https://github.com/daimajia/java-multithread-downloader这个多线程下载库。学习到了好多，感谢！
+就我的学习而言，有下面几点:
+
+总体思路:
+将文件分为不同的块交给不同的线程去执行。
+
+具体做法:
+先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分">
 
   
     <link rel="alternative" href="/atom.xml" title="FeNJuly&#39;s Blog" type="application/atom+xml">
@@ -73,77 +94,89 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/11/26/java-multithread-downloader/" class="archive-article-date">
-  <time datetime="2014-11-26T07:16:15.000Z" itemprop="datePublished">Nov 26</time>
+        <section id="main"><article id="post-java-multithread-downloader" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/26/java-multithread-downloader/" class="article-date">
+  <time datetime="2014-11-26T07:16:15.000Z" itemprop="datePublished">Nov 26 2014</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/11/26/java-multithread-downloader/">Java多线程下载库</a>
+    <h1 class="article-title" itemprop="name">
+      Java多线程下载库
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/11/15/woshibanyungong/" class="archive-article-date">
-  <time datetime="2014-11-15T07:36:04.000Z" itemprop="datePublished">Nov 15</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/11/15/woshibanyungong/">我是搬运工</a>
-    </h1>
-  
+        <p>这几天研究了<a href="https://github.com/daimajia" target="_blank" rel="external">代码家</a>的<a href="https://github.com/daimajia/java-multithread-downloader" target="_blank" rel="external">https://github.com/daimajia/java-multithread-downloader</a>这个多线程下载库。学习到了好多，感谢！</p>
+<p>就我的学习而言，有下面几点:</p>
+<ul>
+<li><p>总体思路:</p>
+<p>将文件分为不同的块交给不同的线程去执行。</p>
+</li>
+<li><p>具体做法:</p>
+<p>先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分到这个线程里的文件块的大小，如果大于一个数(假设为1M)，这个时候再重新split，分出一个小于1M的数据块同时new一个新的线程去下载这个数据块。如此迭代。</p>
+</li>
+<li><p>细节:</p>
+<ul>
+<li><p>代码家用了<code>annotation</code>做了断点记录，这样就可以做断点下载。</p>
+</li>
+<li><p>对速度监控代码家用到了<code>TimerTask</code>和<code>Timer</code>。当新建一个下载任务时调用<code>Timer</code>的 <code>scheduleAtFixedRate(TimerTask task, Date firstTime, long period)</code>这个方法。  </p>
+</li>
+</ul>
+</li>
+<li><p>知识整理:</p>
+<ul>
+<li><p>首先整个库肯定是用线程池实现的。  </p>
+</li>
+<li><p>为了做断点下载用到了<strong><a href="http://zh.wikipedia.org/wiki/JAXB" target="_blank" rel="external">JAXB</a></strong>技术，就是将Java对象序列化为XML。这里就用到了<code>annotation</code>，在网上看了一篇文章讲得很清楚<a href="http://www.cnblogs.com/fragranting/archive/2012/03/25/xml--jaxb.html" target="_blank" rel="external">Jaxb annotation初步使用</a>。<br>s</p>
+</li>
+<li><p>为了监控速度和文件的断点下载用到了<code>Timer</code>和<code>TimerTask</code>，同样在网上找了一篇文章也讲得很清楚<a href="http://alanlhy.iteye.com/blog/1168108" target="_blank" rel="external">Java Timer and TimerTask的用法</a>。 </p>
+</li>
+<li><p>然后由于需要得到下载中的一些信息，用到了<code>Future</code>，也在网上搜了一篇文章<a href="http://www.oschina.net/question/54100_83333#tags_nav" target="_blank" rel="external">java Future用法和意义一句话击破 </a>。</p>
+</li>
+</ul>
+<p>然后，具体的东西还是看代码吧，代码绝对比我说的更清楚。再次感谢代码家。</p>
+</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/11/03/xie-liao-yi-ge-jian-dan-de-ji-ri-ji-de-app/" class="archive-article-date">
-  <time datetime="2014-11-03T12:34:00.000Z" itemprop="datePublished">Nov 3</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/11/03/xie-liao-yi-ge-jian-dan-de-ji-ri-ji-de-app/">写了一个简单的记日记的app</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://fenjuly.com/2014/11/26/java-multithread-downloader/" data-id="fbq9l7gnklr67pwf" class="article-share-link">Share</a>
+      
 
-    </header>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/11/15/woshibanyungong/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我是搬运工</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
 </section>
         
           <aside id="sidebar">
