@@ -75,6 +75,96 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-xue-xi-bi-ji-fragmentyu-activityjiao-hu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/18/xue-xi-bi-ji-fragmentyu-activityjiao-hu/" class="article-date">
+  <time datetime="2014-10-18T05:18:00.000Z" itemprop="datePublished">Oct 18 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/18/xue-xi-bi-ji-fragmentyu-activityjiao-hu/">学习笔记Fragment与Activity交互</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在看<a href="http://developer.android.com/training/index.html" target="_blank" rel="external">Android Traning</a>，在这里记录一下学习笔记。</p>
+<p>然后这里说的是fragment与activityt的交互，一般的做法是在Fragment中定义一个接口。然后activity去实现这个接口。然后framment在<code>onAttach()</code>这中去捕获接口的实现，大概就是这么个过程。</p>
+<p>原话是：</p>
+<blockquote>
+<p>To allow a Fragment to communicate up to its Activity, you can define an interface in the Fragment class and implement it within the Activity. The Fragment captures the interface implementation during its onAttach() lifecycle method and can then call the Interface methods in order to communicate with the Activity.</p>
+</blockquote>
+<p>然后training给的example：</p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HeadlinesFragment</span> <span class="keyword">extends</span> <span class="title">ListFragment</span> </span>{
+    OnHeadlineSelectedListener mCallback;
+
+    <span class="comment">// Container Activity must implement this interface</span>
+    <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OnHeadlineSelectedListener</span> </span>{
+        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onArticleSelected</span>(<span class="keyword">int</span> position);
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAttach</span>(Activity activity) {
+        <span class="keyword">super</span>.onAttach(activity);
+
+        <span class="comment">// This makes sure that the container activity has implemented</span>
+        <span class="comment">// the callback interface. If not, it throws an exception</span>
+        <span class="keyword">try</span> {
+            mCallback = (OnHeadlineSelectedListener) activity;
+        } <span class="keyword">catch</span> (ClassCastException e) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> ClassCastException(activity.toString()
+                    + <span class="string">" must implement OnHeadlineSelectedListener"</span>);
+        }
+    }
+
+    ...
+}
+</code></pre><hr>
+<pre><code><span class="annotation">@Override</span>
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onListItemClick</span>(ListView l, View v, <span class="keyword">int</span> position, <span class="keyword">long</span> id)     {
+        <span class="comment">// Send the event to the host activity</span>
+        mCallback.onArticleSelected(position);
+    }
+</code></pre><hr>
+<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span>
+    <span class="keyword">implements</span> <span class="title">HeadlinesFragment</span>.<span class="title">OnHeadlineSelectedListener</span></span>{
+...
+
+<span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onArticleSelected</span>(<span class="keyword">int</span> position) {
+    <span class="comment">// The user selected the headline of an article from the HeadlinesFragment</span>
+    <span class="comment">// Do something here to display that article</span>
+}
+}
+</code></pre><p>如果activity要传递消息给fragment就太简单了，直接调用fragment的方法。    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://fenjuly.com/2014/10/18/xue-xi-bi-ji-fragmentyu-activityjiao-hu/" data-id="wrx2bkk129854h7g" class="article-share-link">Share</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-kai-xue-lai-de-zhuang-tai" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/02/kai-xue-lai-de-zhuang-tai/" class="article-date">
@@ -412,162 +502,6 @@
 
 
   
-    <article id="post-ji-yi-ge-hen-gui-yi-de-wen-ti" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/05/17/ji-yi-ge-hen-gui-yi-de-wen-ti/" class="article-date">
-  <time datetime="2014-05-17T13:04:00.000Z" itemprop="datePublished">May 17 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/05/17/ji-yi-ge-hen-gui-yi-de-wen-ti/">记一个很诡异的问题</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前段时间做android用到了Picasso这个图片下载缓存库，确实用着很方便，但有个很隐晦的问题困扰了我好久。</p>
-<p>看Picasso的官网，很容易发现Picasso的一般用法是这样的: </p>
-<pre><code>Picasso.<span class="keyword">with</span>(context).load(<span class="string">"http://i.imgur.com/DvpvklR.png"</span>).<span class="keyword">into</span>(imageView);
-</code></pre><p>但是我们注意,如果你要对下载下来的图片进行处理，比如大小按比例裁剪等等.那么你就要这样用:</p>
-<pre><code>Picasso.with(context).load(<span class="string">"http://i.imgur.com/DvpvklR.png"</span>)
-                        .into(<span class="keyword">new</span> Target() {
-
-                            <span class="annotation">@Override</span>
-                            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onPrepareLoad</span>(Drawable arg0) {
-
-                            }
-
-                            <span class="annotation">@Override</span>
-                            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBitmapLoaded</span>(Bitmap bitmap, LoadedFrom loadedFrom) {
-                                <span class="comment">//do something here</span>
-                            }
-
-                            <span class="annotation">@Override</span>
-                            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBitmapFailed</span>(Drawable arg0) {
-
-                            }
-                        });
-</code></pre><p>在<code>OnBitmapLoaded</code>得到bitmap，然后进行处理. 说道这里大家都以为没有问题了，但是你会发现<br>当你手机下载一张图之后本应该要显示的却没有，然而你拖动屏幕之后就有显示了.这里如果你调试时你会发现，第一次这个<code>OnBitmapLoadeded</code>根本没有调用.</p>
-<p>这个问题研究了好久，最后在<a href="https://github.com/square/picasso/issues/251" target="_blank" rel="external">https://github.com/square/picasso/issues/251</a>上找到了答案</p>
-<blockquote>
-<p>Your CustomTarget instance gets gc’ed. You need to hold a strong reference to it.</p>
-</blockquote>
-<p>这就是答案  -.-|.  被gc回收掉了，所以我们必须要加强引用</p>
-<blockquote>
-<p>You need to hold a strong reference to targets yourself.</p>
-</blockquote>
-<pre><code>CustomTarget target = <span class="keyword">new</span> CustomTarget(imageView, progressBar,
-        <span class="keyword">index</span>);
-    picasso.load(imageUrl).<span class="keyword">into</span>(target);
-</code></pre><blockquote>
-<p>after this line target has nothing referencing it so it will be garbaged collected.</p>
-</blockquote>
-<p>这是这个人最后的解决方案:</p>
-<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageLoadWithCallback</span> <span class="keyword">extends</span> <span class="title">FragmentActivity</span> </span>{
-
-    String[] imageUrls = {
-            <span class="string">"http://digital-photography-school.com/wp-content/uploads/2013/03/Acorn256.png"</span>,
-            <span class="string">"http://stereo-ssc.nascom.nasa.gov/beacon/latest_256/behind_euvi_195_latest.jpg"</span>,
-            <span class="string">"http://littleblackapp.blob.core.windows.net/product3071/img10020_0.png"</span> };
-
-    <span class="keyword">private</span> Picasso picasso;
-    <span class="keyword">private</span> ArrayList&lt;CustomTarget&gt; targetList;
-
-
-    <span class="annotation">@Override</span>
-    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span>(Bundle arg0) {
-        <span class="keyword">super</span>.onCreate(arg0);
-        setContentView(R.layout.activity_main);
-        picasso = Picasso.with(<span class="keyword">this</span>);
-        initLoadImages();
-    }
-
-    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initLoadImages</span>() {
-        <span class="comment">// for holding strong reference to Target so that it won't be GC'ed</span>
-        targetList = <span class="keyword">new</span> ArrayList&lt;ImageLoadWithCallback.CustomTarget&gt;(<span class="number">3</span>);
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; imageUrls.length; i++) {
-            String imageUrl = imageUrls[i];
-            picasso.getSnapshot().dump();
-            CustomTarget target = <span class="keyword">new</span> CustomTarget(imageView, progressBar, i);
-            targetList.add(i, target);
-            picasso.load(imageUrl).into(target);
-        }
-
-    }
-
-    <span class="annotation">@Override</span>
-    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span>() {
-        <span class="keyword">super</span>.onDestroy();
-        <span class="keyword">if</span> (isFinishing()) {
-            <span class="keyword">for</span> (CustomTarget target : targetList)
-                picasso.cancelRequest(target);
-
-            targetList.clear();
-            targetList = <span class="keyword">null</span>;
-        }
-
-    }
-
-    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomTarget</span> <span class="keyword">implements</span> <span class="title">Target</span> </span>{
-        <span class="keyword">public</span> ImageView imageView;
-        <span class="keyword">public</span> ProgressBar progressBar;
-        <span class="keyword">private</span> <span class="keyword">int</span> index = -<span class="number">1</span>;
-
-        <span class="keyword">public</span> <span class="title">CustomTarget</span>(ImageView imageView, ProgressBar progressBar,
-                <span class="keyword">int</span> position) {
-            <span class="keyword">this</span>.imageView = imageView;
-            <span class="keyword">this</span>.progressBar = progressBar;
-                      <span class="keyword">this</span>.index =position;
-        }
-
-        <span class="annotation">@Override</span>
-        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBitmapLoaded</span>(<span class="keyword">final</span> Bitmap bitmap, LoadedFrom from) {
-            imageView.setImageBitmap(bitmap);
-            releaseTargetReference();
-        }
-
-        <span class="annotation">@Override</span>
-        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBitmapFailed</span>() {
-            releaseTargetReference();
-        }
-
-        <span class="keyword">private</span> <span class="keyword">void</span> <span class="title">releaseTargetReference</span>() {
-            <span class="keyword">if</span> (index != -<span class="number">1</span>)
-                targetList.remove(index);
-        }
-
-    }
-
-}
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://fenjuly.com/2014/05/17/ji-yi-ge-hen-gui-yi-de-wen-ti/" data-id="fl998rhi5u21x97f" class="article-share-link">Share</a>
-      
-
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -583,7 +517,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -601,7 +535,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -611,6 +545,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/01/13/dasanshangzongjie/">大三上总结</a>
+          </li>
         
           <li>
             <a href="/2014/12/18/jinqizuodeshiqing/">近期感想</a>
@@ -626,10 +564,6 @@
         
           <li>
             <a href="/2014/11/03/xie-liao-yi-ge-jian-dan-de-ji-ri-ji-de-app/">写了一个简单的记日记的app</a>
-          </li>
-        
-          <li>
-            <a href="/2014/10/18/xue-xi-bi-ji-fragmentyu-activityjiao-hu/">学习笔记Fragment与Activity交互</a>
           </li>
         
       </ul>
@@ -659,7 +593,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2014 FeNJuly<br>
+      &copy; 2015 FeNJuly<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
       .
       Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
