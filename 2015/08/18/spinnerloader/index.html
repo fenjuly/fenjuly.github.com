@@ -149,7 +149,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p.x = bigCircleCenterX + (<span class="keyword">float</span>)Math.<span class="keyword">cos</span>(Math.toRadians(<span class="keyword">angle</span>)) * raduis;</div><div class="line">p.y = bigCircleCenterY + (<span class="keyword">float</span>)Math.<span class="keyword">sin</span>(Math.toRadians(<span class="keyword">angle</span>)) * raduis;</div><div class="line"><span class="keyword">angle</span> = <span class="keyword">angle</span> + STEP;</div></pre></td></tr></table></figure>
 
 <ul>
-<li><p><strong>固定点与动态点相交时的半径变化</strong><br>当相交时半径开始变化，二者的圆心离得越近固定点的半径增益越大。利用前面提到的判断是否相交的函数，如果相交则半径增益的计算规则为：s<br><code>realRaduis = circleRaduis + (1 - distance / (circleRaduis + moveRaduis))</code>。</p>
+<li><p><strong>固定点与动态点相交时的半径变化</strong><br>当相交时半径开始变化，二者的圆心离得越近固定点的半径增益越大。利用前面提到的判断是否相交的函数，如果相交则半径增益的计算规则为：<br><code>srealRaduis = circleRaduis + (1 - distance / (circleRaduis + moveRaduis))</code>。</p>
 </li>
 <li><p><strong>动态点与固定点接触与分解时的”粘连“动画</strong><br>这个效果与手Q 的红点消除效果差不多，都是用贝塞尔曲线做的。<br>盗用两张图（图片来自<a href="http://isux.tencent.com/qq-mobile-off-duty.html）：" target="_blank" rel="external">http://isux.tencent.com/qq-mobile-off-duty.html）：</a></p>
 </li>
