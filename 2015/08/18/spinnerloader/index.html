@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>spinnerloader | FeNJuly&#39;s Blog</title>
+  <title>这次是一个Loader | FeNJuly&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前几天在食堂排队时刷tweet，然后见看到了这个东西http://t.co/sUuYTeKOzp。觉得十分有趣，就想着去实现一下，于是就有了这篇文章。先看效果图。
 
@@ -14,7 +14,7 @@
 首先定义几个东西
 大圆的圆心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spinnerloader">
+<meta property="og:title" content="这次是一个Loader">
 <meta property="og:url" content="http://fenjuly.com/2015/08/18/spinnerloader/">
 <meta property="og:site_name" content="FeNJuly's Blog">
 <meta property="og:description" content="前几天在食堂排队时刷tweet，然后见看到了这个东西http://t.co/sUuYTeKOzp。觉得十分有趣，就想着去实现一下，于是就有了这篇文章。先看效果图。
@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://isux.tencent.com/wp-content/uploads/2014/10/20141017134012928.png">
 <meta property="og:image" content="http://isux.tencent.com/wp-content/uploads/2014/10/20141017134012348.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spinnerloader">
+<meta name="twitter:title" content="这次是一个Loader">
 <meta name="twitter:description" content="前几天在食堂排队时刷tweet，然后见看到了这个东西http://t.co/sUuYTeKOzp。觉得十分有趣，就想着去实现一下，于是就有了这篇文章。先看效果图。
 
 思路
@@ -111,7 +111,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      spinnerloader
+      这次是一个Loader
     </h1>
   
 
@@ -149,7 +149,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p.x = bigCircleCenterX + (<span class="keyword">float</span>)Math.<span class="keyword">cos</span>(Math.toRadians(<span class="keyword">angle</span>)) * raduis;</div><div class="line">p.y = bigCircleCenterY + (<span class="keyword">float</span>)Math.<span class="keyword">sin</span>(Math.toRadians(<span class="keyword">angle</span>)) * raduis;</div><div class="line"><span class="keyword">angle</span> = <span class="keyword">angle</span> + STEP;</div></pre></td></tr></table></figure>
 
 <ul>
-<li><p><strong>固定点与动态点相交时的半径变化</strong><br>当相交时半径开始变化，二者的圆心离得越近固定点的半径增益越大。利用前面提到的判断是否相交的函数，如果相交则半径增益的计算规则为：<br><code>realRaduis = circleRaduis + (1 - distance / (circleRaduis + moveRaduis))</code>。</p>
+<li><p><strong>固定点与动态点相交时的半径变化</strong><br>当相交时半径开始变化，二者的圆心离得越近固定点的半径增益越大。利用前面提到的判断是否相交的函数，如果相交则半径增益的计算规则为：s<br><code>realRaduis = circleRaduis + (1 - distance / (circleRaduis + moveRaduis))</code>。</p>
 </li>
 <li><p><strong>动态点与固定点接触与分解时的”粘连“动画</strong><br>这个效果与手Q 的红点消除效果差不多，都是用贝塞尔曲线做的。<br>盗用两张图（图片来自<a href="http://isux.tencent.com/qq-mobile-off-duty.html）：" target="_blank" rel="external">http://isux.tencent.com/qq-mobile-off-duty.html）：</a></p>
 </li>
@@ -176,15 +176,6 @@
   
     
 <nav id="article-nav">
-  
-    <a href="/2015/08/18/spinnerloader/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
   
     <a href="/2015/07/04/dasanxiaxueqizongjie/" id="article-nav-older" class="article-nav-link-wrap">
@@ -225,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">September 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">May 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/09/">September 2013</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -237,11 +228,7 @@
       <ul>
         
           <li>
-            <a href="/2015/08/18/spinnerloader/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2015/08/18/spinnerloader/">spinnerloader</a>
+            <a href="/2015/08/18/spinnerloader/">这次是一个Loader</a>
           </li>
         
           <li>
@@ -254,6 +241,10 @@
         
           <li>
             <a href="/2015/01/13/dasanshangzongjie/">大三上总结</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/18/jinqizuodeshiqing/">近期感想</a>
           </li>
         
       </ul>
