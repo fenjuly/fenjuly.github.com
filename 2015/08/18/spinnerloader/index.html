@@ -3,29 +3,41 @@
 <head>
   <meta charset="utf-8">
   
-  <title>开学来的状态 | FeNJuly&#39;s Blog</title>
+  <title>spinnerloader | FeNJuly&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.买了个mac mini，从此主力机从x230换成mac mini，同时从linux转到osx
-  2.买个了dell u2414h
-  3.完成了清水河畔上学期没做完的功能，再次发布出去
-  4.研究了代码家的开源项目AndroisSwipeLayout，给他发了3个pull request但是可惜全部都没有merge，不过确实向他学习了好多，感谢！
-  5.状态不够好，感觉每天没有动力写">
+  <meta name="description" content="前几天在食堂排队时刷tweet，然后见看到了这个东西http://t.co/sUuYTeKOzp。觉得十分有趣，就想着去实现一下，于是就有了这篇文章。先看效果图。
+
+思路
+整体来看有八个固定的点，一个动态的点，然后整体效果是由三个动画合成的：1.动态点旋转动画。2.动态点与固定点接触时，固定点半径的放大和缩小动画。3.动态点与固定点接触与分解时的”粘连“动画。
+做法
+
+首先定义几个东西
+大圆的圆心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开学来的状态">
-<meta property="og:url" content="http://fenjuly.com/2014/10/02/kai-xue-lai-de-zhuang-tai/">
+<meta property="og:title" content="spinnerloader">
+<meta property="og:url" content="http://fenjuly.com/2015/08/18/spinnerloader/">
 <meta property="og:site_name" content="FeNJuly's Blog">
-<meta property="og:description" content="1.买了个mac mini，从此主力机从x230换成mac mini，同时从linux转到osx
-  2.买个了dell u2414h
-  3.完成了清水河畔上学期没做完的功能，再次发布出去
-  4.研究了代码家的开源项目AndroisSwipeLayout，给他发了3个pull request但是可惜全部都没有merge，不过确实向他学习了好多，感谢！
-  5.状态不够好，感觉每天没有动力写">
+<meta property="og:description" content="前几天在食堂排队时刷tweet，然后见看到了这个东西http://t.co/sUuYTeKOzp。觉得十分有趣，就想着去实现一下，于是就有了这篇文章。先看效果图。
+
+思路
+整体来看有八个固定的点，一个动态的点，然后整体效果是由三个动画合成的：1.动态点旋转动画。2.动态点与固定点接触时，固定点半径的放大和缩小动画。3.动态点与固定点接触与分解时的”粘连“动画。
+做法
+
+首先定义几个东西
+大圆的圆心">
+<meta property="og:image" content="http://i.imgur.com/qFNRkHM.gif">
+<meta property="og:image" content="http://isux.tencent.com/wp-content/uploads/2014/10/20141017134012928.png">
+<meta property="og:image" content="http://isux.tencent.com/wp-content/uploads/2014/10/20141017134012348.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开学来的状态">
-<meta name="twitter:description" content="1.买了个mac mini，从此主力机从x230换成mac mini，同时从linux转到osx
-  2.买个了dell u2414h
-  3.完成了清水河畔上学期没做完的功能，再次发布出去
-  4.研究了代码家的开源项目AndroisSwipeLayout，给他发了3个pull request但是可惜全部都没有merge，不过确实向他学习了好多，感谢！
-  5.状态不够好，感觉每天没有动力写">
+<meta name="twitter:title" content="spinnerloader">
+<meta name="twitter:description" content="前几天在食堂排队时刷tweet，然后见看到了这个东西http://t.co/sUuYTeKOzp。觉得十分有趣，就想着去实现一下，于是就有了这篇文章。先看效果图。
+
+思路
+整体来看有八个固定的点，一个动态的点，然后整体效果是由三个动画合成的：1.动态点旋转动画。2.动态点与固定点接触时，固定点半径的放大和缩小动画。3.动态点与固定点接触与分解时的”粘连“动画。
+做法
+
+首先定义几个东西
+大圆的圆心">
 
   
     <link rel="alternative" href="/atom.xml" title="FeNJuly&#39;s Blog" type="application/atom+xml">
@@ -85,10 +97,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-kai-xue-lai-de-zhuang-tai" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-spinnerloader" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/02/kai-xue-lai-de-zhuang-tai/" class="article-date">
-  <time datetime="2014-10-02T02:31:00.000Z" itemprop="datePublished">Oct 2 2014</time>
+    <a href="/2015/08/18/spinnerloader/" class="article-date">
+  <time datetime="2015-08-18T07:43:12.000Z" itemprop="datePublished">Aug 18 2015</time>
 </a>
     
   </div>
@@ -99,7 +111,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      开学来的状态
+      spinnerloader
     </h1>
   
 
@@ -107,24 +119,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  1.买了个mac mini，从此主力机从x230换成mac mini，同时从linux转到osx</p>
-<p>  2.买个了dell u2414h</p>
-<p>  3.完成了清水河畔上学期没做完的功能，再次发布出去</p>
-<p>  4.研究了<a href="https://github.com/daimajia" target="_blank" rel="external">代码家</a>的开源项目<a href="https://github.com/daimajia/AndroidSwipeLayout" target="_blank" rel="external">AndroisSwipeLayout</a>，给他发了3个pull request但是可惜全部都没有merge，不过确实向他学习了好多，感谢！</p>
-<p>  5.状态不够好，感觉每天没有动力写代码了，可能是因为没活干</p>
-<p>  6.a little lonely</p>
+        <p>前几天在食堂排队时刷tweet，然后见看到了这个东西<a href="http://t.co/sUuYTeKOzp" target="_blank" rel="external">http://t.co/sUuYTeKOzp</a>。觉得十分有趣，就想着去实现一下，于是就有了这篇文章。先看效果图。</p>
+<p><img src="http://i.imgur.com/qFNRkHM.gif" alt="spinnerloader"></p>
+<h3 id="思路">思路</h3>
+<p>整体来看有八个固定的点，一个动态的点，然后整体效果是由三个动画合成的：1.动态点旋转动画。2.动态点与固定点接触时，固定点半径的放大和缩小动画。3.动态点与固定点接触与分解时的”粘连“动画。</p>
+<h3 id="做法">做法</h3>
+<ul>
+<li><strong>首先定义几个东西</strong><ul>
+<li>大圆的圆心(bigCircleCneterX, bigCircleCenterY)。</li>
+<li>大圆的半径raduis。</li>
+<li>固定点的半径circleRaduis。</li>
+<li>动态点的半径moveRaduis。</li>
+<li>动态点每次移动的角度STEP。</li>
+<li>固定点半径的增益长度ADDITION_LENGTH。</li>
+<li>动态点的圆心与固定点圆心的距离distance。动态点是否与固定点相交：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isIntersect</span>(CirclePoint a, CirclePoint b) {</div><div class="line">       <span class="keyword">float</span> distance = (<span class="keyword">float</span>)Math.sqrt((a.x - b.x)*(a.x - b.x) + (a.y - b.y)*(a.y - b.y));</div><div class="line">       <span class="keyword">return</span> distance &lt; (a.raduis + b.raduis);</div><div class="line">   }</div></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>然后画八个固定点，只需要确定圆心和半径即可</strong></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p.x = getPaddingLeft() + bigCircleCenterX + (float)<span class="built_in">Math</span>.cos(<span class="built_in">Math</span>.toRadians(<span class="number">45</span> * i)) * raduis;       p.y = getPaddingTop() + bigCircleCenterY + (float)<span class="built_in">Math</span>.sin(<span class="built_in">Math</span>.toRadians(<span class="number">45</span> * i)) * raduis;</div></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>动态点的绘制</strong></li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p.x = bigCircleCenterX + (<span class="keyword">float</span>)Math.<span class="keyword">cos</span>(Math.toRadians(<span class="keyword">angle</span>)) * raduis;</div><div class="line">p.y = bigCircleCenterY + (<span class="keyword">float</span>)Math.<span class="keyword">sin</span>(Math.toRadians(<span class="keyword">angle</span>)) * raduis;</div><div class="line"><span class="keyword">angle</span> = <span class="keyword">angle</span> + STEP;</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>固定点与动态点相交时的半径变化</strong><br>当相交时半径开始变化，二者的圆心离得越近固定点的半径增益越大。利用前面提到的判断是否相交的函数，如果相交则半径增益的计算规则为：<br><code>realRaduis = circleRaduis + (1 - distance / (circleRaduis + moveRaduis))</code>。</p>
+</li>
+<li><p><strong>动态点与固定点接触与分解时的”粘连“动画</strong><br>这个效果与手Q 的红点消除效果差不多，都是用贝塞尔曲线做的。<br>盗用两张图（图片来自<a href="http://isux.tencent.com/qq-mobile-off-duty.html）：" target="_blank" rel="external">http://isux.tencent.com/qq-mobile-off-duty.html）：</a></p>
+</li>
+</ul>
+<p><img src="http://isux.tencent.com/wp-content/uploads/2014/10/20141017134012928.png" alt=""></p>
+<p><img src="http://isux.tencent.com/wp-content/uploads/2014/10/20141017134012348.png" alt=""></p>
+<p>要做出“粘连”的效果，关键是要计算出如图的p1 p2 p3 p4还有P5这几个点。p1-p4是两个圆的切点，p5这个点是贝塞尔曲线的控制点，这个里面我取的是固定点与动态点圆心连线的中点。具体怎么计算出p1-p4并绘制，我参考了这个项目<a href="https://github.com/chenupt/SpringIndicator" target="_blank" rel="external">https://github.com/chenupt/SpringIndicator</a></p>
+<p>好了，到这里就介绍完了，附上源码地址<a href="https://github.com/fenjuly/SpinnerLoader" target="_blank" rel="external">GitHub</a>。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://fenjuly.com/2014/10/02/kai-xue-lai-de-zhuang-tai/" data-id="oa92pc8dd1gy189l" class="article-share-link">Share</a>
+        <a data-url="http://fenjuly.com/2015/08/18/spinnerloader/" data-id="mlef4whl49m431sq" class="article-share-link">Share</a>
       
 
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Life/">Life</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -132,19 +177,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/10/18/xue-xi-bi-ji-fragmentyu-activityjiao-hu/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/08/18/spinnerloader/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          学习笔记Fragment与Activity交互
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2014/09/05/zhe-ge-shu-jia/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/04/dasanxiaxueqizongjie/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">这个暑假</div>
+      <div class="article-nav-title">大三下学期总结</div>
     </a>
   
 </nav>
