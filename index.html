@@ -103,19 +103,19 @@
 <h3 id="思路">思路</h3>
 <p>整体来看有点复杂，不过可以把实现过程按照阶段来划分。</p>
 <p>先下载原图，观察每一帧。</p>
-<p><img src="/pic1.jpg" alt=""></p>
-<p><img src="/pic2.jpg" alt=""></p>
-<p><img src="/pic3.jpg" alt=""></p>
-<p><img src="/pic4.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic1.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic2.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic3.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic4.jpg" alt=""></p>
 <h4 id="第一阶段">第一阶段</h4>
 <p>就是箭头的柄慢慢压缩，箭头的头慢慢伸展，最后柄合成一个小球，被箭头弹起来。设如图a,b,c,d,e五个点，其中a,e点一开始是重合的。假设在实际绘制中，把这一阶段设为18帧，那么前9帧，先绘制a,b两点慢慢靠近（即a.y-step a.b+step。c,d,e三点慢慢舒张（即，每隔3帧c向左移，d向右移，e向下移，<code>c.x-step b.x+step, e.y + step</code>）。10-12帧，c,d,e连城弧线向上弹，同时小球弹飞（<code>c.x-step c.y-step d.x+step d.y-step e.y-step jump.y - step</code>）。13-16帧，c,d,e弧线慢慢变为水平线，小球落下（<code>jump.y-step</code>）。</p>
-<p><img src="/pic5.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic5.jpg" alt=""></p>
 <h4 id="第二阶段：">第二阶段：</h4>
 <p>这一阶段由两个动画组成，最外层的progress动画，和圆心水平线的波浪动画。最外层的progress动画比较简单，就是每隔一帧按照当前的progress来绘制圆弧<br>，圆弧的角度为<code>progress/100 * 360</code>。圆心的波浪动画采用三角函数来做，我这里的做法是取了两个周期，</p>
-<p><img src="/pic6.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic6.jpg" alt=""></p>
 <p>然后每隔1/8个周期选一个点，那么就有17个点。假设每一帧我是隔20ms刷新的，那么我就可以将周期设为160ms。那么这里我就可以求出每一个点的高度随时间变化的函数：<br><code>y = H * sin(Pi/80 * (originalTime + currentTime))</code>。（这里有个小细节，H是随progress的进度变化而变化的）。这里求出每点的高度之后，我在绘制每一帧的时候就可以用连线将各个点连接起来，然后随着帧数的增加，currentTiem也增加，<code>currentTiem=curremtTime+20ms</code>。这样就形成了波浪效果。</p>
-<p><img src="/pic7.jpg" alt=""></p>
-<p><img src="/pic8.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic7.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic8.jpg" alt=""></p>
 <h4 id="第三阶段：">第三阶段：</h4>
 <p>这一阶段比较简单了，就是波浪线消失，然后慢慢出现小勾。假设这一阶段我定为4帧，那么前3帧（<code>c.x+step c.y+step e.y+step d.x-step d.y-step</code>），第4帧小勾“抖动放大”（<code>c.x-step c.y-step e.y+step d.x+step d.y-step</code>)。</p>
 <p>注：以上的step值都不一定相同，只是用step来代替每次一次的变化量。</p>
