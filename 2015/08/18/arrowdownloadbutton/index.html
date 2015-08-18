@@ -3,38 +3,59 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Java多线程下载库 | FeNJuly&#39;s Blog</title>
+  <title>又来了，这次是一个很Cool的Button | FeNJuly&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这几天研究了代码家的https://github.com/daimajia/java-multithread-downloader这个多线程下载库。学习到了好多，感谢！
-就我的学习而言，有下面几点:
+  <meta name="description" content="先上图：
 
-总体思路:
-将文件分为不同的块交给不同的线程去执行。
+起因是前几天我在逛dribbble的时候看见了这个https://dribbble.com/shots/2012292-Download-Animation，觉得awesome！，就动了自己把它实现的念头。
+思路
+整体来看有点复杂，不过可以把实现过程按照阶段来划分。
+先下载原图，观察每一帧。
 
-具体做法:
-先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分">
+
+
+
+第一阶段
+就是箭头的柄慢慢压缩，箭头的头慢慢伸展，最后柄合成一个小球，被箭头弹起来。设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java多线程下载库">
-<meta property="og:url" content="http://fenjuly.com/2014/11/26/java-multithread-downloader/">
+<meta property="og:title" content="又来了，这次是一个很Cool的Button">
+<meta property="og:url" content="http://fenjuly.com/2015/08/18/arrowdownloadbutton/">
 <meta property="og:site_name" content="FeNJuly's Blog">
-<meta property="og:description" content="这几天研究了代码家的https://github.com/daimajia/java-multithread-downloader这个多线程下载库。学习到了好多，感谢！
-就我的学习而言，有下面几点:
+<meta property="og:description" content="先上图：
 
-总体思路:
-将文件分为不同的块交给不同的线程去执行。
+起因是前几天我在逛dribbble的时候看见了这个https://dribbble.com/shots/2012292-Download-Animation，觉得awesome！，就动了自己把它实现的念头。
+思路
+整体来看有点复杂，不过可以把实现过程按照阶段来划分。
+先下载原图，观察每一帧。
 
-具体做法:
-先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分">
+
+
+
+第一阶段
+就是箭头的柄慢慢压缩，箭头的头慢慢伸展，最后柄合成一个小球，被箭头弹起来。设">
+<meta property="og:image" content="http://i.imgur.com/ioldIp2.gif">
+<meta property="og:image" content="/pic1.jpg">
+<meta property="og:image" content="/pic2.jpg">
+<meta property="og:image" content="/pic3.jpg">
+<meta property="og:image" content="/pic4.jpg">
+<meta property="og:image" content="/pic5.jpg">
+<meta property="og:image" content="/pic6.jpg">
+<meta property="og:image" content="/pic7.jpg">
+<meta property="og:image" content="/pic8.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java多线程下载库">
-<meta name="twitter:description" content="这几天研究了代码家的https://github.com/daimajia/java-multithread-downloader这个多线程下载库。学习到了好多，感谢！
-就我的学习而言，有下面几点:
+<meta name="twitter:title" content="又来了，这次是一个很Cool的Button">
+<meta name="twitter:description" content="先上图：
 
-总体思路:
-将文件分为不同的块交给不同的线程去执行。
+起因是前几天我在逛dribbble的时候看见了这个https://dribbble.com/shots/2012292-Download-Animation，觉得awesome！，就动了自己把它实现的念头。
+思路
+整体来看有点复杂，不过可以把实现过程按照阶段来划分。
+先下载原图，观察每一帧。
 
-具体做法:
-先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分">
+
+
+
+第一阶段
+就是箭头的柄慢慢压缩，箭头的头慢慢伸展，最后柄合成一个小球，被箭头弹起来。设">
 
   
     <link rel="alternative" href="/atom.xml" title="FeNJuly&#39;s Blog" type="application/atom+xml">
@@ -94,10 +115,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-java-multithread-downloader" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-arrowdownloadbutton" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/26/java-multithread-downloader/" class="article-date">
-  <time datetime="2014-11-26T07:16:15.000Z" itemprop="datePublished">Nov 26 2014</time>
+    <a href="/2015/08/18/arrowdownloadbutton/" class="article-date">
+  <time datetime="2015-08-18T08:28:49.000Z" itemprop="datePublished">Aug 18 2015</time>
 </a>
     
   </div>
@@ -108,7 +129,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java多线程下载库
+      又来了，这次是一个很Cool的Button
     </h1>
   
 
@@ -116,49 +137,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这几天研究了<a href="https://github.com/daimajia" target="_blank" rel="external">代码家</a>的<a href="https://github.com/daimajia/java-multithread-downloader" target="_blank" rel="external">https://github.com/daimajia/java-multithread-downloader</a>这个多线程下载库。学习到了好多，感谢！</p>
-<p>就我的学习而言，有下面几点:</p>
-<ul>
-<li><p>总体思路:</p>
-<p>将文件分为不同的块交给不同的线程去执行。</p>
-</li>
-<li><p>具体做法:</p>
-<p>先按照预先设定的线程数将文件split，假设预先设定了4个线程，这个时候文件就被分为了4块。然后再具体到每一个线程里面：首先判断分到这个线程里的文件块的大小，如果大于一个数(假设为1M)，这个时候再重新split，分出一个小于1M的数据块交给本来的线程下载,同时new一个新的线程去下载剩下的数据块。如此迭代。</p>
-</li>
-<li><p>细节:</p>
-<ul>
-<li><p>代码家用了<code>annotation</code>做了断点记录，这样就可以做断点下载。</p>
-</li>
-<li><p>对速度监控代码家用到了<code>TimerTask</code>和<code>Timer</code>。当新建一个下载任务时调用<code>Timer</code>的 <code>scheduleAtFixedRate(TimerTask task, Date firstTime, long period)</code>这个方法。  </p>
-</li>
-</ul>
-</li>
-<li><p>知识整理:</p>
-<ul>
-<li><p>首先整个库肯定是用线程池实现的。  </p>
-</li>
-<li><p>为了做断点下载用到了<strong><a href="http://zh.wikipedia.org/wiki/JAXB" target="_blank" rel="external">JAXB</a></strong>技术，就是将Java对象序列化为XML。这里就用到了<code>annotation</code>，在网上看了一篇文章讲得很清楚<a href="http://www.cnblogs.com/fragranting/archive/2012/03/25/xml--jaxb.html" target="_blank" rel="external">Jaxb annotation初步使用</a>。  </p>
-</li>
-<li><p>为了监控速度和文件的断点下载用到了<code>Timer</code>和<code>TimerTask</code>，同样在网上找了一篇文章也讲得很清楚<a href="http://alanlhy.iteye.com/blog/1168108" target="_blank" rel="external">Java Timer and TimerTask的用法</a>。 </p>
-</li>
-<li><p>然后由于需要得到下载中的一些信息，用到了<code>Future</code>，也在网上搜了一篇文章<a href="http://www.oschina.net/question/54100_83333#tags_nav" target="_blank" rel="external">java Future用法和意义一句话击破 </a>。</p>
-</li>
-</ul>
-<p>然后，具体的东西还是看代码吧，代码绝对比我说的更清楚。再次感谢代码家。</p>
-</li>
-</ul>
+        <p>先上图：</p>
+<p><img src="http://i.imgur.com/ioldIp2.gif" alt="arrowdownloadbutton"></p>
+<p>起因是前几天我在逛dribbble的时候看见了这个<a href="https://dribbble.com/shots/2012292-Download-Animation" target="_blank" rel="external">https://dribbble.com/shots/2012292-Download-Animation</a>，觉得awesome！，就动了自己把它实现的念头。</p>
+<h3 id="思路">思路</h3>
+<p>整体来看有点复杂，不过可以把实现过程按照阶段来划分。</p>
+<p>先下载原图，观察每一帧。</p>
+<p><img src="/pic1.jpg" alt=""></p>
+<p><img src="/pic2.jpg" alt=""></p>
+<p><img src="/pic3.jpg" alt=""></p>
+<p><img src="/pic4.jpg" alt=""></p>
+<h4 id="第一阶段">第一阶段</h4>
+<p>就是箭头的柄慢慢压缩，箭头的头慢慢伸展，最后柄合成一个小球，被箭头弹起来。设如图a,b,c,d,e五个点，其中a,e点一开始是重合的。假设在实际绘制中，把这一阶段设为18帧，那么前9帧，先绘制a,b两点慢慢靠近（即a.y-step a.b+step。c,d,e三点慢慢舒张（即，每隔3帧c向左移，d向右移，e向下移，<code>c.x-step b.x+step, e.y + step</code>）。10-12帧，c,d,e连城弧线向上弹，同时小球弹飞（<code>c.x-step c.y-step d.x+step d.y-step e.y-step jump.y - step</code>）。13-16帧，c,d,e弧线慢慢变为水平线，小球落下（<code>jump.y-step</code>）。</p>
+<p><img src="/pic5.jpg" alt=""></p>
+<h4 id="第二阶段：">第二阶段：</h4>
+<p>这一阶段由两个动画组成，最外层的progress动画，和圆心水平线的波浪动画。最外层的progress动画比较简单，就是每隔一帧按照当前的progress来绘制圆弧<br>，圆弧的角度为<code>progress/100 * 360</code>。圆心的波浪动画采用三角函数来做，我这里的做法是取了两个周期，</p>
+<p><img src="/pic6.jpg" alt=""></p>
+<p>然后每隔1/8个周期选一个点，那么就有17个点。假设每一帧我是隔20ms刷新的，那么我就可以将周期设为160ms。那么这里我就可以求出每一个点的高度随时间变化的函数：<br><code>y = H * sin(Pi/80 * (originalTime + currentTime))</code>。（这里有个小细节，H是随progress的进度变化而变化的）。这里求出每点的高度之后，我在绘制每一帧的时候就可以用连线将各个点连接起来，然后随着帧数的增加，currentTiem也增加，<code>currentTiem=curremtTime+20ms</code>。这样就形成了波浪效果。</p>
+<p><img src="/pic7.jpg" alt=""></p>
+<p><img src="/pic8.jpg" alt=""></p>
+<h4 id="第三阶段：">第三阶段：</h4>
+<p>这一阶段比较简单了，就是波浪线消失，然后慢慢出现小勾。假设这一阶段我定为4帧，那么前3帧（<code>c.x+step c.y+step e.y+step d.x-step d.y-step</code>），第4帧小勾“抖动放大”（<code>c.x-step c.y-step e.y+step d.x+step d.y-step</code>)。</p>
+<p>注：以上的step值都不一定相同，只是用step来代替每次一次的变化量。</p>
+<p>好嘞，以上就是实现过程。<br>然后附上源码地址：<a href="https://github.com/fenjuly/ArrowDownloadButton" target="_blank" rel="external">GitHub</a> :)</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://fenjuly.com/2014/11/26/java-multithread-downloader/" data-id="mtr58le7o4jlylva" class="article-share-link">Share</a>
+        <a data-url="http://fenjuly.com/2015/08/18/arrowdownloadbutton/" data-id="m8lu7fynopgkieqj" class="article-share-link">Share</a>
       
 
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
 
     </footer>
   </div>
@@ -166,19 +179,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/12/18/jinqizuodeshiqing/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          近期感想
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/15/woshibanyungong/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/08/18/spinnerloader/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">我是搬运工</div>
+      <div class="article-nav-title">这次是一个Loader</div>
     </a>
   
 </nav>
