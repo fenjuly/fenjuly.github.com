@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>公路车调试初体验 | [FeN]July&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="最近学习了怎么调试公路车的变速器（前拨，后拨）。我目前有两辆公路车，它们使用的都是机械变速和圈刹制动。这两辆车的刹车和变速都是外走线，非常易于维护，所以也十分适合我练习怎么修车。　　我这两辆车分别有一些问题，其中一辆车的后拨变速时总有几个档位很难挂上去。同时即使挂上去了，在踩踏的时候也会听到“呲呲呲”的声音。我在骑行了一段时间后觉得十分难受，于是研究怎么解决。在学习了几个视频之后，我大致清楚了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="公路车调试初体验">
+<meta property="og:url" content="http://fenjuly.com/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/index.html">
+<meta property="og:site_name" content="[FeN]July&#39;s Blog">
+<meta property="og:description" content="最近学习了怎么调试公路车的变速器（前拨，后拨）。我目前有两辆公路车，它们使用的都是机械变速和圈刹制动。这两辆车的刹车和变速都是外走线，非常易于维护，所以也十分适合我练习怎么修车。　　我这两辆车分别有一些问题，其中一辆车的后拨变速时总有几个档位很难挂上去。同时即使挂上去了，在踩踏的时候也会听到“呲呲呲”的声音。我在骑行了一段时间后觉得十分难受，于是研究怎么解决。在学习了几个视频之后，我大致清楚了">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-04-10T10:53:29.000Z">
+<meta property="article:modified_time" content="2026-04-10T10:54:51.000Z">
+<meta property="article:author" content="July">
+<meta property="article:tag" content="公路车">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">[FeN]July&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你听日落的晚钟</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fenjuly.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-学习了怎么调试公路车变速装置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2026-04-10T10:53:29.000Z" itemprop="datePublished">2026-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      公路车调试初体验
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>　　最近学习了怎么调试公路车的变速器（前拨，后拨）。我目前有两辆公路车，它们使用的都是机械变速和圈刹制动。这两辆车的刹车和变速都是外走线，非常易于维护，所以也十分适合我练习怎么修车。<br>　　我这两辆车分别有一些问题，其中一辆车的后拨变速时总有几个档位很难挂上去。同时即使挂上去了，在踩踏的时候也会听到“呲呲呲”的声音。我在骑行了一段时间后觉得十分难受，于是研究怎么解决。在学习了几个视频之后，我大致清楚了问题在哪里，这里先介绍一下后拨变速器的变速原理。我们通过变速线来控制变速器的导轮在不同的“飞轮”（固定在后车轮上的大小不一齿轮片）之间来回切换。每一个档位最理想的情况就是后拨导轮和当前飞轮处在同一个垂直面，这样踩踏链条在传动时，链条不会与车轮，车架或者其他档位的飞轮产生摩擦。想象一下，如果没有处在一个垂直面，那么链条就是一个“斜”向工作的状态，必然会摩擦其他飞轮或者车架。出现这种情况时自然就产生异响了，同时传动效率变低，也会降低链条飞轮的寿命。我们通过变速线来“横向移动导轮”，每一个档位移动的行程是“固定”（暂时这么认为）的，所以如果你处在的最高档位和最低档位时，你的导轮没有分别对齐飞轮的最小盘和最大盘，那么变速必然不准确。所以调节后拨变速时的第一个步骤就是对齐。后拨变速器上有两颗螺丝，分别叫高位限位螺丝和低位限位螺丝。通过拧这两颗螺丝可以改变导轮的水平位置。一般的做法是通过旋转高位限位螺丝使导轮对齐最小的飞轮，保证变速器在“初始时”的位置是正确的，这样我们就可以进行下一步了。前面说过，我们使用变速线来变档时每一个档位移动的变速线行程是固定的，这句话其实不准确，这个行程其实也可以调整，那就是要用到变速器上的另外一颗螺丝：“微调螺丝”。这颗螺丝的作用就是调节变速线的松紧，通过改变变速线的松紧从而达到改变每一个档位的行程长度。我遇到的经常挂不上某个档位就是变速线太“松”导致的。最后还剩一个低位限位螺丝，它的作用是控制变速器最低档位的水平位置的，如果你的变速器在最低档位（最大飞轮）时会遇到掉链的情况，通常是导轮相对于大飞轮“偏外了”，这个时候就用通过拧动低位限位螺丝来调节导轮的最外侧位置，使得它向内靠。<br>　　<br>  而我的另外一台车正好遇到了前拨的问题，同时我也就学习了怎么调节前拨。这台车会在后飞轮某个档位时开始遇到链条蹭到前拨的情况。最终经过研究，发现我的车前拨蹭链条主要是由两个原因造成的：</p>
+<ol>
+<li>我的前拨并没有和牙盘保持一个竖直平行的状态，同时，前拨与牙盘的纵向间隙也不一致</li>
+<li>同样，我的前拨的两颗限位螺丝（分别控制最大盘和最小盘时，前拨的水平位置的）也调的不准<br>具体的细节我就不继续讲了，总之，有了之前调试后拨的经验，前拨的原理也更容易理解了。于是反复调节几遍后，终于让两辆车切换到任何一个档位时踩踏丝滑无比了。</li>
+</ol>
+<p>这一顿折腾让我心情愉悦，接下来就让我用几次长途检验一下我的调试成果吧～</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/" data-id="cuidP1nxBq_3NgqOSiEQ6dRTE" data-title="公路车调试初体验" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" rel="tag">公路车</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          用 AI 来帮我实现一款桌游
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">缘分会在某一个瞬间戛然而止</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" rel="tag">公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%A1%E5%9B%AD/" rel="tag">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%8C%E6%B8%B8/" rel="tag">桌游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation/" style="font-size: 20px;">Animation</a> <a href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" style="font-size: 10px;">公路车</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 10px;">动漫</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 10px;">旅行</a> <a href="/tags/%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">校园</a> <a href="/tags/%E6%A1%8C%E6%B8%B8/" style="font-size: 20px;">桌游</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/">用 AI 来帮我实现一款桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/">公路车调试初体验</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/">缘分会在某一个瞬间戛然而止</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/19/%E6%88%91%E7%9A%84%E6%96%B0%E7%88%B1%E5%A5%BD%E2%80%93%E2%80%93%E6%A1%8C%E6%B8%B8/">我的新爱好––桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/05/%E6%8A%8A%E4%BB%A5%E5%90%8E%E6%94%BE%E5%9C%A8%E6%AD%A4%E5%88%BB/">把以后放在此刻</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 July<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

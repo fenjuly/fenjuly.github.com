@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>又来了，这次是一个很Cool的Button | [FeN]July&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="先上图：  arrowdownloadbutton 起因是前几天我在逛dribbble的时候看见了这个https:&#x2F;&#x2F;dribbble.com&#x2F;shots&#x2F;2012292-Download-Animation，觉得awesome！，就动了自己把它实现的念头。 思路整体来看有点复杂，不过可以把实现过程按照阶段来划分。 先下载原图，观察每一帧。     第一阶段就是箭头的柄慢慢压缩，箭头的头慢慢伸展，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="又来了，这次是一个很Cool的Button">
+<meta property="og:url" content="http://fenjuly.com/2015/04/18/%E5%8F%88%E6%9D%A5%E4%BA%86%EF%BC%8C%E8%BF%99%E6%AC%A1%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88Cool%E7%9A%84Button/index.html">
+<meta property="og:site_name" content="[FeN]July&#39;s Blog">
+<meta property="og:description" content="先上图：  arrowdownloadbutton 起因是前几天我在逛dribbble的时候看见了这个https:&#x2F;&#x2F;dribbble.com&#x2F;shots&#x2F;2012292-Download-Animation，觉得awesome！，就动了自己把它实现的念头。 思路整体来看有点复杂，不过可以把实现过程按照阶段来划分。 先下载原图，观察每一帧。     第一阶段就是箭头的柄慢慢压缩，箭头的头慢慢伸展，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://i.imgur.com/ioldIp2.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic4.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic5.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic6.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic7.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic8.jpg">
+<meta property="article:published_time" content="2015-04-17T16:01:30.000Z">
+<meta property="article:modified_time" content="2026-03-06T04:06:54.000Z">
+<meta property="article:author" content="July">
+<meta property="article:tag" content="Animation">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://i.imgur.com/ioldIp2.gif">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">[FeN]July&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你听日落的晚钟</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fenjuly.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-又来了，这次是一个很Cool的Button" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2015/04/18/%E5%8F%88%E6%9D%A5%E4%BA%86%EF%BC%8C%E8%BF%99%E6%AC%A1%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88Cool%E7%9A%84Button/" class="article-date">
+  <time class="dt-published" datetime="2015-04-17T16:01:30.000Z" itemprop="datePublished">2015-04-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Coding/">Coding</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      又来了，这次是一个很Cool的Button
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>先上图：</p>
+<p><a target="_blank" rel="noopener" href="http://i.imgur.com/ioldIp2.gif" title="arrowdownloadbutton"><img src="http://i.imgur.com/ioldIp2.gif" alt="arrowdownloadbutton"></a></p>
+<p><a target="_blank" rel="noopener" href="http://i.imgur.com/ioldIp2.gif" title="arrowdownloadbutton">arrowdownloadbutton</a></p>
+<p>起因是前几天我在逛dribbble的时候看见了这个<a target="_blank" rel="noopener" href="https://dribbble.com/shots/2012292-Download-Animation">https://dribbble.com/shots/2012292-Download-Animation</a>，觉得awesome！，就动了自己把它实现的念头。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>整体来看有点复杂，不过可以把实现过程按照阶段来划分。</p>
+<p>先下载原图，观察每一帧。</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic1.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic2.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic3.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic4.jpg"></p>
+<h4 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h4><p>就是箭头的柄慢慢压缩，箭头的头慢慢伸展，最后柄合成一个小球，被箭头弹起来。设如图a,b,c,d,e五个点，其中a,e点一开始是重合的。假设在实际绘制中，把这一阶段设为18帧，那么前9帧，先绘制a,b两点慢慢靠近（即a.y-step a.b+step。c,d,e三点慢慢舒张（即，每隔3帧c向左移，d向右移，e向下移，<code>c.x-step b.x+step, e.y + step</code>）。10-12帧，c,d,e连城弧线向上弹，同时小球弹飞（<code>c.x-step c.y-step d.x+step d.y-step e.y-step jump.y - step</code>）。13-16帧，c,d,e弧线慢慢变为水平线，小球落下（<code>jump.y-step</code>）。</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic5.jpg"></p>
+<h4 id="第二阶段："><a href="#第二阶段：" class="headerlink" title="第二阶段："></a>第二阶段：</h4><p>这一阶段由两个动画组成，最外层的progress动画，和圆心水平线的波浪动画。最外层的progress动画比较简单，就是每隔一帧按照当前的progress来绘制圆弧<br>，圆弧的角度为<code>progress/100 * 360</code>。圆心的波浪动画采用三角函数来做，我这里的做法是取了两个周期，</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic6.jpg"></p>
+<p>然后每隔1&#x2F;8个周期选一个点，那么就有17个点。假设每一帧我是隔20ms刷新的，那么我就可以将周期设为160ms。那么这里我就可以求出每一个点的高度随时间变化的函数：<br><code>y = H * sin(Pi/80 * (originalTime + currentTime))</code>。（这里有个小细节，H是随progress的进度变化而变化的）。这里求出每点的高度之后，我在绘制每一帧的时候就可以用连线将各个点连接起来，然后随着帧数的增加，currentTiem也增加，<code>currentTiem=curremtTime+20ms</code>。这样就形成了波浪效果。</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic7.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic8.jpg"></p>
+<h4 id="第三阶段："><a href="#第三阶段：" class="headerlink" title="第三阶段："></a>第三阶段：</h4><p>这一阶段比较简单了，就是波浪线消失，然后慢慢出现小勾。假设这一阶段我定为4帧，那么前3帧（<code>c.x+step c.y+step e.y+step d.x-step d.y-step</code>），第4帧小勾“抖动放大”（<code>c.x-step c.y-step e.y+step d.x+step d.y-step</code>)。</p>
+<p>注：以上的step值都不一定相同，只是用step来代替每次一次的变化量。</p>
+<p>好嘞，以上就是实现过程。<br>然后附上源码地址：<a target="_blank" rel="noopener" href="https://github.com/fenjuly/ArrowDownloadButton">GitHub</a> :)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2015/04/18/%E5%8F%88%E6%9D%A5%E4%BA%86%EF%BC%8C%E8%BF%99%E6%AC%A1%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88Cool%E7%9A%84Button/" data-id="cuidXg0fRgmOYcbobGgGzoZoJ" data-title="又来了，这次是一个很Cool的Button" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/30/%E6%B2%A1%E6%9C%89%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AF%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          没有开始的话
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/18/%E8%BF%99%E6%AC%A1%E6%98%AF%E4%B8%80%E4%B8%AA-Loader/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">这次是一个 Loader</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" rel="tag">公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%A1%E5%9B%AD/" rel="tag">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%8C%E6%B8%B8/" rel="tag">桌游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation/" style="font-size: 20px;">Animation</a> <a href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" style="font-size: 10px;">公路车</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 10px;">动漫</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 10px;">旅行</a> <a href="/tags/%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">校园</a> <a href="/tags/%E6%A1%8C%E6%B8%B8/" style="font-size: 20px;">桌游</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/">用 AI 来帮我实现一款桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/">公路车调试初体验</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/">缘分会在某一个瞬间戛然而止</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/19/%E6%88%91%E7%9A%84%E6%96%B0%E7%88%B1%E5%A5%BD%E2%80%93%E2%80%93%E6%A1%8C%E6%B8%B8/">我的新爱好––桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/05/%E6%8A%8A%E4%BB%A5%E5%90%8E%E6%94%BE%E5%9C%A8%E6%AD%A4%E5%88%BB/">把以后放在此刻</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 July<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

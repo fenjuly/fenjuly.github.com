@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>[FeN]July&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="[FeN]July&#39;s Blog">
+<meta property="og:url" content="http://fenjuly.com/index.html">
+<meta property="og:site_name" content="[FeN]July&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="July">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">[FeN]July&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你听日落的晚钟</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fenjuly.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-用-AI-来帮我实现一款桌游" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/" class="article-date">
+  <time class="dt-published" datetime="2026-08-06T09:29:14.000Z" itemprop="datePublished">2026-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/">用 AI 来帮我实现一款桌游</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  以前有很长一段时间我很喜欢单人桌游，在 <a target="_blank" rel="noopener" href="https://boardgamegeek.com/">BGG</a> 上排名很高的单人桌游有灵岛迹和魔法骑士。这两款游戏我都有购入实体版，但每次一个人去开桌游总会嫌麻烦，因为收纳和展开费时费力，久而久之我就将目光瞄向了这些游戏的电子版本。</p>
+<p>  灵迹岛在这方面做的非常好，它的电子版提供了完整的单人游玩和多人模式，游戏完成度很高，制作精良，最关键，它上架了多个平台：Steam，iOS，Android。我随时随机可以在手机上游玩。<br>而魔法骑士则恰恰相反，他没有任何的官方正版电子游戏，有且仅有一个 TTS(Steam 上著名的桌游模拟器)的自动化脚本版本。这个 TTS 版本玩起来对我来说会有几个痛点：</p>
+<ul>
+<li>它只能在 Steam 上玩，无论是在电脑上还是我的 Steam Deck 上玩起来都不是很方便。（电脑限制了我的游玩地点，而 Steam Deck 又太重）</li>
+<li>本质上桌游模拟器只提供了游戏的 UI 模型，最多加上了一些自动化脚本，但游戏的运行实际上还是依靠玩家自己的，而玩家随时会犯错，或者拿不准某项规则，往往容易村规。而一些比较成熟的电子版桌游对规则有严格实现，玩家完全不用担心自己是否在“乱来”</li>
+</ul>
+<p>  而魔法骑士它的可玩性又很高，游戏性很丰富，并且每一局游戏都会是一场不同的冒险，我是十分喜欢这个游戏的，只是苦于没有一个成熟的电子版本，我随时随地开一局的愿望不能实现。</p>
+<p>但转折出现了。今年来 AI 再次出圈，像是年初那会儿的 clawbot 已经让人们意识到 AI 可以真正帮你去完成一项复杂的工作，你只需要去验收成果，并且教他一些技能，让他帮你完成你想做的事。<br>于是乎，让 AI 去帮我实现魔法骑士的电子版游戏的想法就在我脑海里出现了，于是我就开始行动了。</p>
+<p>  用 AI 去实现一款桌游是有一个天然的优势的，大多数高分流行的桌游都有一本逻辑严密的规则书，我们并不需要去充当一个产品经理或者游戏设计师的角色（往往这两个角色的工作是很难的，你很难表达清楚自己意思，或者直接把你的需求说清楚）。而现在我只需要把规则书喂给 AI，那么它就可以自己去读规则去实现游戏了，这简直太完美了。事实上我在迭代这个游戏的过程中这部分都也确实没怎么操心，AI 很容易就实现了整套游戏的框架。<br> 我只需要不断的去检查它实现结果，然后引导它搭建一套完整的测试框架以及补充相应的测试用例。每当他实现一个功能的同时，让它记得去补充测试用例，同时整跑完整个测试流程，整套流程下来遇到问题就修问题，直到测试通过，那么才算一次合格的迭代。</p>
+<p>  整套游戏的搭建用了最简单快速高效的方案，一套运行在浏览器的网页。在后续游戏框架都迭代得比较完善的时候，我又让 AI 加上了生成 Android APK 的脚本，由于是浏览器套壳游戏，很容易就移植到了 Android 上。目前整个游戏的流程基本上跑通了，剩下的工作就是我多玩几把，把交互做到更好，方便我更好的在移动端操作，同时，尽可能换一套漂亮的 UI。</p>
+<p>  补几张游戏的截图：</p>
+<img src="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/632CF42D73D6A4326E5F798D506523E9.jpg" class="" title="启动图">
+
+<img src="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/4197607DFA48A4497D9BFAFE8BA32792.jpg" class="" title="游戏主画面">
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/" data-id="cuid9moghfOJHdFi18equQ9VH" data-title="用 AI 来帮我实现一款桌游" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A1%8C%E6%B8%B8/" rel="tag">桌游</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-学习了怎么调试公路车变速装置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2026-04-10T10:53:29.000Z" itemprop="datePublished">2026-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/">公路车调试初体验</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>　　最近学习了怎么调试公路车的变速器（前拨，后拨）。我目前有两辆公路车，它们使用的都是机械变速和圈刹制动。这两辆车的刹车和变速都是外走线，非常易于维护，所以也十分适合我练习怎么修车。<br>　　我这两辆车分别有一些问题，其中一辆车的后拨变速时总有几个档位很难挂上去。同时即使挂上去了，在踩踏的时候也会听到“呲呲呲”的声音。我在骑行了一段时间后觉得十分难受，于是研究怎么解决。在学习了几个视频之后，我大致清楚了问题在哪里，这里先介绍一下后拨变速器的变速原理。我们通过变速线来控制变速器的导轮在不同的“飞轮”（固定在后车轮上的大小不一齿轮片）之间来回切换。每一个档位最理想的情况就是后拨导轮和当前飞轮处在同一个垂直面，这样踩踏链条在传动时，链条不会与车轮，车架或者其他档位的飞轮产生摩擦。想象一下，如果没有处在一个垂直面，那么链条就是一个“斜”向工作的状态，必然会摩擦其他飞轮或者车架。出现这种情况时自然就产生异响了，同时传动效率变低，也会降低链条飞轮的寿命。我们通过变速线来“横向移动导轮”，每一个档位移动的行程是“固定”（暂时这么认为）的，所以如果你处在的最高档位和最低档位时，你的导轮没有分别对齐飞轮的最小盘和最大盘，那么变速必然不准确。所以调节后拨变速时的第一个步骤就是对齐。后拨变速器上有两颗螺丝，分别叫高位限位螺丝和低位限位螺丝。通过拧这两颗螺丝可以改变导轮的水平位置。一般的做法是通过旋转高位限位螺丝使导轮对齐最小的飞轮，保证变速器在“初始时”的位置是正确的，这样我们就可以进行下一步了。前面说过，我们使用变速线来变档时每一个档位移动的变速线行程是固定的，这句话其实不准确，这个行程其实也可以调整，那就是要用到变速器上的另外一颗螺丝：“微调螺丝”。这颗螺丝的作用就是调节变速线的松紧，通过改变变速线的松紧从而达到改变每一个档位的行程长度。我遇到的经常挂不上某个档位就是变速线太“松”导致的。最后还剩一个低位限位螺丝，它的作用是控制变速器最低档位的水平位置的，如果你的变速器在最低档位（最大飞轮）时会遇到掉链的情况，通常是导轮相对于大飞轮“偏外了”，这个时候就用通过拧动低位限位螺丝来调节导轮的最外侧位置，使得它向内靠。<br>　　<br>  而我的另外一台车正好遇到了前拨的问题，同时我也就学习了怎么调节前拨。这台车会在后飞轮某个档位时开始遇到链条蹭到前拨的情况。最终经过研究，发现我的车前拨蹭链条主要是由两个原因造成的：</p>
+<ol>
+<li>我的前拨并没有和牙盘保持一个竖直平行的状态，同时，前拨与牙盘的纵向间隙也不一致</li>
+<li>同样，我的前拨的两颗限位螺丝（分别控制最大盘和最小盘时，前拨的水平位置的）也调的不准<br>具体的细节我就不继续讲了，总之，有了之前调试后拨的经验，前拨的原理也更容易理解了。于是反复调节几遍后，终于让两辆车切换到任何一个档位时踩踏丝滑无比了。</li>
+</ol>
+<p>这一顿折腾让我心情愉悦，接下来就让我用几次长途检验一下我的调试成果吧～</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/" data-id="cuidP1nxBq_3NgqOSiEQ6dRTE" data-title="公路车调试初体验" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" rel="tag">公路车</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-缘分会在某一个瞬间戛然而止" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/" class="article-date">
+  <time class="dt-published" datetime="2026-03-27T10:32:11.000Z" itemprop="datePublished">2026-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/">缘分会在某一个瞬间戛然而止</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>最初听到这句话是在贺炜解说的一场足球比赛里。他拿马拉多纳举例：1994 年的世界杯，马拉多纳被查出服用兴奋剂，随后被国际足联禁赛，但那时的人们并没有意识到这是这位球王在世界大赛的最后一舞。想来也正常，1986 年马拉多纳几乎凭借一己之力帮助阿根廷获得了大力神杯，而在 1990 年，他又再次带领阿根廷国家队闯入世界杯决赛，只可惜最后 0:1 输给了德国队。所以，在四年之后，人们自然而然期盼着这位有史以来最「伟大」的球王再次展现他的舞姿，并且相信着这位球王征服世界足球的脚步不会停留在此刻。<br>但事实往往就是如此，你见证过一个人的顶峰，并且认为他会持续下去，但某一天他就宣布退役了，再也没有出现在你的视野里。</p>
+<p>我喜欢的球员德布劳内，我总以为他还会站在阿提哈德的聚光灯下，在蓝月亮的绿荫场上再来一脚漂亮的外脚背弧线助攻哈兰德破门，可那年的伤病过后，他再也没能恢复到当初的水平，没能在曼市终老，最终远走亚平宁。</p>
+<p>一件不经意的小事，往往就是命运的转折，缘分会在这个瞬间戛然而止。</p>
+<p>去年我常去家附近的一个路边摊买炒粉吃，他的炒粉量大，味道好，我经常去那里买晚饭。但某一天城管开始管控后，他就没出现了。我在那里吃了大半年的炒粉，在那里买一份炒粉已经融入我的日常生活。他消失后的一段时间，我还会路过那附近去看看他有没有回来，但他始终没有再出现。不禁感慨他还在的时候，我为什么没有加他的微信，否则也不至于现在想那一份口味却四顾茫然。</p>
+<p>这些道理其实很简单，但我们真正意识到它往往是后知后觉的。我常在安慰人时说：”来日方长，慢慢来，别着急“，却又回头思考这么说是否有道理，我自己想来是觉得有点矛盾的。思来想去，某些道理也只在特定的场合下才体现它的正确性，若我今天只谈「缘分」这一件事，那我还是不要用“来日方长”的好，命运不会提醒你：“这是最后一次啦，请珍惜”。</p>
+<p>今年的夏天会在美加墨举行世界杯，可以预见的是 C 罗，梅西，德布劳内，甚至可能还有哈里凯恩，这会是他们的最后一节世界杯。我已经做好心理准备，他们的比赛看一场少一场，把每一场比赛都当作最后一场来看，意识到可能一场小组赛的终哨，就是传奇们的谢幕。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/" data-id="cuidPErXdCcHNqjM-n2b72Bfx" data-title="缘分会在某一个瞬间戛然而止" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-我的新爱好––桌游" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/19/%E6%88%91%E7%9A%84%E6%96%B0%E7%88%B1%E5%A5%BD%E2%80%93%E2%80%93%E6%A1%8C%E6%B8%B8/" class="article-date">
+  <time class="dt-published" datetime="2026-03-19T09:03:51.000Z" itemprop="datePublished">2026-03-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/19/%E6%88%91%E7%9A%84%E6%96%B0%E7%88%B1%E5%A5%BD%E2%80%93%E2%80%93%E6%A1%8C%E6%B8%B8/">我的新爱好––桌游</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>最近两年，我多了一个新的爱好，玩桌游。</p>
+<p>在公司上班的午休期间，我喜欢去公司附近的瑞幸喝一杯咖啡，然后刷一会儿手机以度过午休时间。当然，这样打发午休的人不止我一个。某一天，一位同事带来了一盒《璀璨宝石》，然后给我们讲起了规则，于是，新世界的大门就这样被打开了。</p>
+<p>在接触桌游之前，我一直很喜欢掌机游戏。原因也很简单：掌机能随时随地带来快乐。我对游戏画面并没有太高要求，觉得一个游戏的游戏性才是第一位。掌机的便携性，以及丰富的游戏库完美地符合了我的需求。<br>但电子游戏也有它的问题。很多优秀的作品在通关之后，可玩性就几乎没有了（有例外）。久而久之，就会遇到游戏荒。而桌游恰恰就是在我陷入这种游戏荒的时候，出现在我面前的。</p>
+<p>桌游，字面上理解就是「桌面上的游戏」。几位玩家围坐在桌前，摆弄着各种 token、卡牌和板块，按照既定规则彼此竞争，争夺胜利。或者也可能相互合作，共同达成目标。</p>
+<p>在真正接触桌游之前，我玩过的最接近桌游的游戏大概是「拉密」（也叫以色列麻将）。它确实属于桌游的范畴，但实际玩起来的感觉又确实更像它另一个名字里的「麻将」。所以，虽然我很早就接触过拉密，却始终没有真正走进桌游这个圈子。</p>
+<p>直到第一次和同事玩《璀璨宝石》，我才初步领略到桌游的魅力。<br>首先，桌游会让你意识到，你当下的每一个行动，都会影响到几回合之后的局势。你必须从更长远的角度去规划自己的选择，这会迫使人进入一种很有深度的思考状态。<br>其次，桌游并不只是「做好自己」那么简单。你还需要不断揣测对手的意图：这一回合，我究竟应该优先构筑自己的能力，还是刻意拿走对手急需的宝石或卡牌，拖慢他的得分节奏？<br>我才发现，原来世界上还有这样一种游戏形式：它既有思考的深度，又有人与人之间的互动。于是，从那以后，我便一发不可收拾地入坑了。</p>
+<p>随着越玩越多，我们也逐渐形成了自己的开桌节奏。中午午休时间，通常会玩一些被戏称为「毛线游戏」的轻量桌游，偏轻松和聚会向。其中我尤其喜欢日本公司 Oink 出品的小盒游戏。它们最大的特点就是体积小巧，几乎可以随手揣进口袋里。游戏性可圈可点。如果外出聚会，可以随手带上一盒作为欢乐暖场的小工具，非常合适。</p>
+<p>到了晚上下班之后，时间更充裕，我们就会玩一些策略度更高的游戏。最开始，大家会开《卡坦岛》《卡卡颂》这类经典轻策，后来慢慢进阶到《勃艮第城堡》《康考迪亚》这样的中策，再往后就开始尝试《SETI》《大创造时代》这类更偏重度的作品了。</p>
+<p>前前后后两年的时间，我自己有一些开的比较多，比较偏爱的桌游，这里列举几款：</p>
+<p>《七大奇迹对决》<br>《勃艮第城堡》<br>《姬路城》<br>《奥地利大饭店》<br>《卡坦岛》</p>
+<p>我喜欢《七大奇迹对决》是因为刚入坑桌游那会儿，我只能在有限的时间里和同事一起玩。为了回家以后也能开上一局，我自然开始关注那些适合双人对战的作品，而《七大奇迹对决》也就顺理成章地进入了我的视野。它的规则足够简洁，上手门槛不高，但又有很完整的博弈体验。这个游戏有三条不同的胜利路线，本体加上后来推出的三款扩展，让它的可玩性和策略层次都提升了不少。对我来说，它是一款简单但不单薄的优秀双人桌游。</p>
+<p>而《勃艮第城堡》，算得上是我真正意义上第一次上手的中策桌游。玩家扮演法国的领主，在自己的领地中建设城市，发展畜牧业，修建修道院。这个游戏让我第一次深刻体会到了「连锁行动」（combo）的魅力：良好地规划的你行动，一次看似普通的操作，往往能够触发一连串收益，极大提高整体效率。当你完成一次这样的操作时，会有一种由内而外迸发的「爽感」，这真是桌游的魅力之一。设计者巧妙地利用了骰子这个简单的工具。它既是行动力来源，又通过点数限制了你的行动方式。骰子的存在确实会带来一些随机性，但游戏又允许玩家通过工人和特殊建筑的能力来修正这种随机波动，使得运气不会完全压倒策略。这款游戏的重开性非常高，它提供了多种不同的领地地图，而每局出现的六角板块组合也不尽相同。因此，我对它一直情有独钟，于是后面我购买了它的典藏版，还在闲鱼上淘了一个大学生 DIY 的小盒版。</p>
+<p>我喜欢《姬路城》更多是因为它的美术风格和故事背景。就纯游戏性而言，它只能算是中规中矩但颇有韵味的那一类。同样地，它也是一款骰子驱动的桌游，掷出的点数会直接影响你接下来的行动选择。它和《奥地利大饭店》都属于那种氛围感很强，题材本身就很吸引我的游戏。它们因为背景设定和整体气质很对我的口味，往往能让我玩得很投入，也很沉浸。</p>
+<p>最后是《卡坦岛》。这是一款缺点很多，但却简单和耐玩的游戏。它诞生于 1995 年，经历了这么多年，生命力却依然旺盛。桌游圈里常说如果要推荐一个人入坑桌游，那么「两卡一城」（《卡卡颂》《卡坦岛》《富饶之城》）几乎是绕不开的名字。这足以说明《卡坦岛》的经典。至于我为什么喜欢它，原因反而很简单：因为它太方便和轻松欢乐了。我可以随时随地在 BGA 上和朋友开上一局。它的游戏特性决定了我能在比较轻松的状态下完成一局游戏，甚至中间还能抽空做点别的，不必像很多其他桌游那样全程保持高强度专注。同时，它又具备一定的互动性和很强的随机性，经常一些操作和结果会惹的大家哭笑不得。某种意义上说，我对《卡坦岛》的感情大概就是爱恨交加，但始终愿意再来一局。</p>
+<p>桌游之所以能让我持续喜欢两年，并愿意继续玩下去，大抵是因为它不仅有丰富的主题和游戏性，同时也锻炼了我思考能力。而跟三俩朋友围坐在一起时独有的欢乐氛围感也让我很享受。它于我而言更像是一种以前不曾有过的生活方式。最后我想说的是，最难得的不是找到一款好玩的桌游，而是一群愿意陪你玩桌游的人。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/03/19/%E6%88%91%E7%9A%84%E6%96%B0%E7%88%B1%E5%A5%BD%E2%80%93%E2%80%93%E6%A1%8C%E6%B8%B8/" data-id="cuidiCRoldqtC0WXdKLhOMaww" data-title="我的新爱好––桌游" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A1%8C%E6%B8%B8/" rel="tag">桌游</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-把以后放在此刻" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/05/%E6%8A%8A%E4%BB%A5%E5%90%8E%E6%94%BE%E5%9C%A8%E6%AD%A4%E5%88%BB/" class="article-date">
+  <time class="dt-published" datetime="2026-03-05T10:33:32.000Z" itemprop="datePublished">2026-03-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/05/%E6%8A%8A%E4%BB%A5%E5%90%8E%E6%94%BE%E5%9C%A8%E6%AD%A4%E5%88%BB/">把以后放在此刻</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今年春节我看了《葬送的芙莉莲》这部动画。大约一年前，我看过它对应漫画的介绍视频。不同于传统的故事，它不是从启程讲起，而是从终点开始，这让我印象深刻。因此这次在思考如何打发飞往日本的漫长航程时，我想起了这部作品。</p>
+<p>故事开章便是一段传奇旅程的落幕。勇者辛美尔一行人历经十年，终于打败魔王回到王都。十年，对于普通人类来说是足以改变容貌与命运的漫长岁月，但对于芙莉莲而言，却只是她漫长生命里微不足道的一瞬。作为精灵，她拥有近乎无限的寿命，所以设定上她对时间的感受与人类截然不同，因此对情感的认识也显得淡漠而迟缓。</p>
+<p>在击败魔王迎来和平年代后，勇者一行四人各自走向不同的生活。他们约定五十年后相聚，一起去观赏世纪流星雨。对人类而言，这是跨越半生的约定，对芙莉莲来说，不过是稍纵即逝的间隔。<br>于是时间就这样无声流逝了。五十年后，流星划过夜空时，芙莉莲的容貌几乎没有改变，而辛美尔却已步入暮年。当我惊讶于主角已经是一个糟老头，而之后的故事将会怎么展开时，随之而来的是辛美尔的葬礼。后面我才理解，原来故事整部作品真正的起点正是这场葬礼。芙莉莲站在棺木前，她放声大哭，那一刻她应该发现，对人类而言，“以后”是一种奢侈。那些未曾说出口的话，未曾认真倾听的心意，都随着生命的终结一并消散，时间的残酷被具象化地呈现在她眼前，而她几乎从未真正了解过辛美尔。</p>
+<p>故事真正开始了。</p>
+<p>芙莉莲踏上新的旅途，这一次不再是为了讨伐魔王，而是为了理解“人”。她有了新的伙伴，重新走过当年与辛美尔曾一起走过的路。而这次，她开始学会观察周围人的情感。一路上重拾往昔与辛美尔一行人在一起的回忆，并将这份美好的情感传递给其他人。</p>
+<p>我喜欢这部作品，它最动人的地方，不在于宏大的战斗场面，而在于时间本身。我早已过了看热血动漫的年纪，如果它像传统的英雄故事在“打败魔王”的那一刻结束，难免落入俗套，而我大概率不会去了解它。而《葬送的芙莉莲》选择把镜头对准胜利之后的空白，当这一阶段的使命完成，荣耀落幕，你要如何面对漫长的余生？动画中不止一次从旧时的伙伴口中传达出：“当人逐渐衰老后，时光会变得额外漫长”。我想应该是失去目标后，人生停止了方向，会变得漫无目的吧。又或者是人在暮年时会不断念起往昔，自己的消亡不可怕，却担心连同旧时的回忆也消失于尘埃。而对于芙莉莲来说，当曾经的伙伴一个个老去，而自己却几乎不受时间侵蚀，记忆会不会成为一种负担？旧时的同伴已然消散，百年之后，人类世界或已没有人记得勇者的故事，若自己也遗忘这份回忆，那曾经的同伴是否真正存在过？然而这一次旅途，她找到了答案。她决定守护这些痕迹，自己是这些时刻的亲历者和见证者，她决定将这些“记忆”带到未来，起码她自己不会遗忘这一切。</p>
+<p>芙莉莲的成长，是一种缓慢而迟到的觉醒。在辛美尔去世后的岁月里，她逐渐明白，人类之所以炽烈地去爱，去承诺，去珍惜，是因为生命短暂。正因为有限，才显得珍贵。她开始主动去记住每一个细节，去理解辛美尔当年那些温柔而笨拙的表达。她在回忆中一点点拼凑出他的心意，也在新的相遇中学会回应他人的情感。</p>
+<p>我忽然意识到，或许我们每个人都像芙莉莲一样，总以为“以后还有时间”。我们对身边的人不够耐心，不够认真地倾听，也不够坦率地表达。等到真正意识到时，时间早已悄悄溜走。</p>
+<p>《葬送的芙莉莲》并不悲伤，却充满温柔。它没有强调失去的痛苦，而是告诉我们在仍拥有时去理解，去珍惜。时间并不是敌人，真正令人遗憾的，是在时间流逝时的迟钝与冷漠。<br>或许这正是它打动我的原因。在有限的时间里，认真对待每一次相遇。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/03/05/%E6%8A%8A%E4%BB%A5%E5%90%8E%E6%94%BE%E5%9C%A8%E6%AD%A4%E5%88%BB/" data-id="cuidcjv4eXMOw2zf66c8SXblW" data-title="把以后放在此刻" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-写在正月初四" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/02/20/%E5%86%99%E5%9C%A8%E6%AD%A3%E6%9C%88%E5%88%9D%E5%9B%9B/" class="article-date">
+  <time class="dt-published" datetime="2026-02-19T16:01:30.000Z" itemprop="datePublished">2026-02-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/02/20/%E5%86%99%E5%9C%A8%E6%AD%A3%E6%9C%88%E5%88%9D%E5%9B%9B/">写在正月初四</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>三十一年来这是我第一次没在家乡过春节，做出这个决定是在两三个月前，往年的春节在家无聊时都会后悔浪费了好长一个黄金周，而二五年正好还余了几天年假，于是就合理地想到跟春节凑在一起，这样就达成十多天的小长假。</p>
+<p>除夕这天我从深圳飞到了东京，计划里我会在这个假期先后去到东京，函馆，旭川，札幌，小樽这几座城市，最后从仙台返程。而写下这段文字的时候，我还在函馆。<br>在除夕夜离开故土去到另一个国家是一种奇特的体验。机场很空旷，出境特别顺利。大部分时间我在飞机上度过，年夜饭自然而然是一顿飞机餐。那一刻我在想，我离开的这片土地正万家灯火，爸妈还有姐姐姐夫他们应该聚在一起喝酒吃饭看春晚，好不热闹。有那么一刻我是后悔的–我想起母亲在听到我春节不会回去时，她眼里有泪花，她一直在期待我撤销这个决定，然而最终我还是决定不回去，她应该伤心了很久。无论如何我出发了，人生偶尔会偏离一下既定的轨道，那就好好享受呗。</p>
+<p>旅程的头两天安排在东京。这里的线下店购物体验是无与伦比的。现如今国内的网购太发达了，淘宝，京东，拼多多，似乎一个 APP 就能完成你所有的购物需求。但在享受便利的同时，我们也丢失了在沉浸式挑选商品时所附赠的情绪价值。而有的时候购物不是目的，穿梭于货架寻找下一刻出现的惊喜会更令人愉悦。东京又是一个常来常新的城市，无论你是一个什么样的人，在这里总能找到你的爱好。我这次特意去逛了东京的 Blue Lug，这是一家在日本东京创立的自行车集合店品牌，他们出售自行车，配件以及相关周边。他们并不是传统意义上的“自行车卖场”，而是一个把骑行，设计，街头文化和生活方式结合在一起的自行车品牌，他们宣扬一种独特的骑行文化和生活方式。我去的是它其中一家分店，店铺选址并不在繁华的商业中心，导航带我经过了一条条小路，然后在某条街道旁店铺就出现了，十分不起眼，就像是老家的旧城区开了一家自行车店一样，我会有这种感觉。初进这家店的时候，惊讶于迎面而来的随性和生活气息。店门口摆放着一些待出售的自行车，其中有一些是二手的，钢架车居多。进门有两个货架摆放了他们自己的骑行周边。再往里走就是各种自行车配件了，像是货架，车把，把立，脚踏等。而整个车店的顶部空间，也被他们利用了起来，挂满了自行车车架，车轮，以及一些整车，琳琅满目，密密麻麻。店里面也设有工作间，几个店员正在调试一些车子，就在收银柜台后面。店铺虽然不大，却给人一种充实感。现在国内自行车店往往布置的过于“精致”，将一辆辆车擦得铮亮然后摆上车架，但会让人望而却步。而在这里，如果时间允许我可以待上一整天，我可以挑选该买哪个样式货架来满足我的载物需求；我也可以挑选颜色各异的骑行帽，背包，束脚带来搭配我的出行风格；或是我可以挑选不同的改件来个性化我的自行车。</p>
+<p>我在店铺待了有接近两小时的时间，最后因为要赶飞机不得不离开，十分不舍。我感受到了他们是一群热爱自行车，有独特见解的一群人。就像他们介绍自己时说的那样，他们会售卖经过他们认真挑选的自行车相关商品，如果某一个物品在市场上没有合适的产品能够满足他们的需求，他们就会自己做。我喜欢他们的态度和审美，我会再去 Blue Lug 的。</p>
+<p>离开东京下一站就是函馆了。这是一座海边的港口城市（我觉得它更像一座小镇）。虽然它坐落在北海道的最南边，但这里的雪量已经是我人生中见到的最多的了。这让我对北海道这块久负盛名的地域有了切实的印象。到达函馆的第二天早上，天气是晴朗的，当天的计划是 city walk ，目的地是函馆山。从酒店出发就经过了海边。阳光，雪，深蓝色的海，这是我从未见过的景色，有那么一瞬间世界像按下了暂停键，唯一能提醒我时间还在流逝的就是耳旁呼啸而过的海风。啊，好美，也真的好冷！一路上发现有很多西式建筑，去搜索了下才知道原来函馆是北海道最早对外开放的港口之一（十九世纪中期），城市里能看到很多明显受西洋文化影响的点，像是石板坡道街景，天主教堂等。</p>
+<p>函馆最出名的就是它的夜景，从函馆山上的观景台俯瞰整个城市拍下的景色，被当地的宣传称为世界三大夜景之一（只其中一个是香港维多利亚港，还有一个不记得了）。不想为了一张照片太晚下山，夜晚的函馆配合海风，我害怕体验这种滋味。于是早早登上函馆山后，在观景台附近喝了杯咖啡就马上下山了。就白天山顶的风景来看，并不是特别出彩。</p>
+<p>所以整个函馆给我印象最深刻的不是它特意宣传的夜景，而是那张阳光下，深蓝与雪白映衬的海边风景。以及，接近五百人民币一份的新鲜海胆饭（真的很新鲜）。<br>短暂的停留让我觉得函馆是安静的，它不是大都市，也没有被过分游客化，一切都刚刚好。我喜欢这样的城市。</p>
+<p>这次北海道之旅就真正从函馆开始了。<br>未完不一定续。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/02/20/%E5%86%99%E5%9C%A8%E6%AD%A3%E6%9C%88%E5%88%9D%E5%9B%9B/" data-id="cuidzQN9UZC-KuTKhxzwDLawg" data-title="写在正月初四" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-重新记录这一刻" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/02/13/%E9%87%8D%E6%96%B0%E8%AE%B0%E5%BD%95%E8%BF%99%E4%B8%80%E5%88%BB/" class="article-date">
+  <time class="dt-published" datetime="2026-02-13T10:22:14.000Z" itemprop="datePublished">2026-02-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/02/13/%E9%87%8D%E6%96%B0%E8%AE%B0%E5%BD%95%E8%BF%99%E4%B8%80%E5%88%BB/">重新记录这一刻</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>距离上一次写博客已经九年了，我自己在现实中的体感仿佛没有过去多久，但如果我仔细思考这个时间跨度，接近十年的时间，做个等价对比的话：把时间放到 2000 年代，那么我下一次写博客的时候就已经是 2010 年了，这样一想，居然有这么长时间没有写字了，不禁感慨万分。人生能有多少个十年，好在今天我还记得这件事，现在记录大概也来得及吧。</p>
+<p>九年前，我还是个初入职场的愣头青，如今已过而立。或按程序员的记录法，也即将迈过 0x10 到达 0x20 这个时间节点。我的心境早已不同于当年。回头再读那些旧文字会惊讶：原来那时的我是那样子。也愈发明白，如果不在当下把生活与心绪记录下来，不用十年，或许只需短短三年，许多细节就会悄然散去，连同来时的路也会渐渐模糊。</p>
+<p>不过今天在这里我并不打算写一篇回忆录，我只想记录此刻的心情。<br>今天是农历腊月二十八，再过三天就是除夕。此刻，我坐在公司的办公桌前慢慢敲下这些文字。办公室里已没剩多少人，大多数同事都选择在春节前提前休假。窗外是深圳常有的好天气，阳光透过玻璃缓缓地洒进来。<br>我很享受这样的氛围——安静、不被打扰。我拥有足够的时间与空间，去整理脑海中那些零散的思绪。</p>
+<p>去年国庆后我开始骑行。并不是我刻意下了什么决心要去寻找一个新的爱好，非得说骑行的缘由的话，我想可能是在那之前我看到「王师傅骑自行车送外卖」这件事启发了我。但真正让我下定决心去试一试的，是他用两天时间，从上海骑到了杭州。他在到达杭州后说到：「我做到了，如果我也能做到这件事，那么屏幕前的你们也可以做到你们想要做而没做的事」。一个没有运动基础的“肥宅”，拖着两百斤的体重，骑着一辆喜德盛的入门公路车，两天骑完了两百公里。既然他都能做到，那我为什么还要在下班后瘫在家里，不肯出门看看身边的风景呢？那一刻，我确实被打动了。于是，我开始骑车。</p>
+<p>骑车与开车是两种截然不同的出行方式。同样从 A 点到 B 点的一段路，开车时目光只停留在前方的车流，后视镜里的世界，以及终点的停车位，速度与效率占据了一切。直到我开始骑行，才意识到自己曾错过了多少风景。骑车时我可以随时停下，随意拐进一条不在导航里的小路，穿过那些四轮车从未进入的窄巷。有那么一刻阳光正好，微风拂面，藏在我记忆深处的琴弦被轻轻拨动了。那种感觉，像是在无声地与童年的自己重逢 —— 那个骑着单车，无忧无虑，天真而自由的我。仿佛那一刻的我正与过去的自己并肩而行，在同一条路上，缓缓对话。我很享受，我想我要继续骑下去。</p>
+<p>近半年来，在工作上我做得很艰难，没有信心地投入到一个我不认可的方向，毫无产出，不断怀疑自己。期间诸多烦恼不多叙述。所幸，最近我得以从中解脱，回归到一条路线清晰，能实际产生价值的工作上来，更重要的是，我在慢慢找回信心。这次我想好好地做下去，与过去半年里那个消沉迷惘的自己告别。</p>
+<p>既然说起工作，我在 18 年初离开深圳去到广州加入了一家创业公司，到 22 年初离开这家公司，前后差不多四年。这四年里，我内心里对这家公司投入了很多感情，以至于最后因为没有融到新一轮钱，不得不离开时我难过了很长一段时间。在那之后我对于工作的态度有了很大的变化。我不再轻易产生强烈的认同感，只想着把工作当作一份付出时间与能力，换取体面的回报的交换，于是我在下一次谈薪时，几乎放弃了所有的期权激励–如果你从没在期权上赚过钱就不要强调它的重要性，这是我当时所想。跟着公司一起成长听起来确实动人，但当时的我已经不再抱有太多期待，既因为上一份工作的经历，也因为外部环境在那一年急转直下。</p>
+<p>而现在，我对工作的看法又与那时不同了，人确实会改变，或许成年之后，性格的大轮廓不会再有太多变化，但思考方式与认知，却会在不同的人生阶段不断调整。现在的我，不再执着于“做出一款产品去改变世界”的宏大叙事。我更愿意把手头的工作做好，把具体的问题解决到位，对得起自己，也对得起公司。在闲暇之余，慢慢打磨能力，拓展知识面，这样就已经足够。不再追求宏观的愿景而更专注眼前，工作不再只是负担，或单纯的谋生手段。真正能长久陪伴你的，是你所学到的知识与积累。你不能在当下这个节点看出所有东西的意义，事实上没有人能做到，只有在回望时，才会发现那些零散的“点”最终能串成一条“线”。</p>
+<p>在多年后重新开始记录文字，我想让它成为一个开始，过去的我常常羞于表达内心与情感，许多想法只停留在心里，不曾落笔，但我渐渐明白若仅凭记忆，很难在时间的长河中清晰地留住每一段路途的心情与收获。这些年的经历也让我愈发体会到文字的力量，只是受限于自己并不出色（稀烂）的文笔，常常在表达或叙述时词不达意，难以把心中所想完整地呈现出来。所以我转念一想，或许正可以一边记录，一边练习，把这件事当作一次长期的锻炼。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/02/13/%E9%87%8D%E6%96%B0%E8%AE%B0%E5%BD%95%E8%BF%99%E4%B8%80%E5%88%BB/" data-id="cuidi1CWKc88Mh0Nh_r96Y_BW" data-title="重新记录这一刻" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-写在2016的最后" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2017/01/02/%E5%86%99%E5%9C%A82016%E7%9A%84%E6%9C%80%E5%90%8E/" class="article-date">
+  <time class="dt-published" datetime="2017-01-01T16:01:30.000Z" itemprop="datePublished">2017-01-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2017/01/02/%E5%86%99%E5%9C%A82016%E7%9A%84%E6%9C%80%E5%90%8E/">写在2016的最后</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今天在知乎上看到一个提问”如何放弃喜欢很久的人？”，有个回答是“希望你别放弃 继续喜欢吧”。</p>
+<p>是啊，别放弃啊，上一次被她拒绝之后，给她说“我不想放弃，等我变好了一点再来找你”。现在我是变得比当时好了啊，我都没有再次鼓起勇气表白，为什么就要放弃呢？</p>
+<p>所以，这个元旦我毫不犹豫的买了去找她票，可惜她要加班工作，都没见着面，那天，站在广场中央有无奈和失落，现在想来，这又有么关系呢？毕业前夕，去找了她，一起去爬了山，看了电影，现在想来，都是美好的回忆。时间前移，也都是好的回忆。</p>
+<p>所以，下一个时间点，我再去找她，我要告诉她，我还是喜欢你啊！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2017/01/02/%E5%86%99%E5%9C%A82016%E7%9A%84%E6%9C%80%E5%90%8E/" data-id="cuidv3b5GIaRJiD4EnHu5CIJa" data-title="写在2016的最后" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-没有开始的话" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2016/04/30/%E6%B2%A1%E6%9C%89%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AF%9D/" class="article-date">
+  <time class="dt-published" datetime="2016-04-29T16:01:30.000Z" itemprop="datePublished">2016-04-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2016/04/30/%E6%B2%A1%E6%9C%89%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AF%9D/">没有开始的话</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今天是2016年4月30号，离我毕业的日子也只剩最后的一两个月了，很久没有记东西，我想，在最后的大学时光里面回忆一下这四年走过的路，遇到的人和事，以及自己的心情感受。</p>
+<p>从开始的地方记起。</p>
+<p><strong>2012年9月</strong><br>这一年，我告别了的我的高中时代，来到了成都上大学。那时候我和她还没有分手，我和她一起报这所大学，然后又都被录取了，在别人看起来我们是很幸运和幸福的。还记得报道后的第一个晚上，我和她一起散步，坐在图书馆外的草坪上，我对她说：“我们太幸运了，多少人面对大学的异地无奈的分手，还好我们还在一起”。</p>
+<p><strong>2012年9月－10月</strong><br>之后就开始军训了，我自己从来都不是最聪明最有天赋的那群人，所以那时候自己怕落后于人，白天军训，晚上就去图书馆借了好多编程的书看，不懂的地方，那时候问天哥和也是从安乡考过来的一个学姐。</p>
+<p>军训的最后是军训总结大会，军训总结大会上每个班都要按照方队走过主席台。在总结大会的前一天，我被教官骂了，原因是我正步没走好，那时候教官当着好多人，包括别的班的人大声把我骂了一遍，我感觉自尊心被伤害了，受不了直接跟着对骂，然后直接跑出操场了。一怒之下我跑到寝室，带了一本C语言的书到教室楼四楼去上自习去了，然后辅导员就急了，到处找我，一直打我电话，一开始我没接，后来冷静下来后就接了，然后辅导员就过来找到了我问我怎么回事，我说着说着就哭了。。。大学第一次当着外人的面流泪。最后辅导员问我还想不想去参加后面的训练，我说不想去，然后辅导员就说正好要拍一个军训记录的视频问我要不要跟着她一起，我就跟着去了，在路上，那时很迷茫的我问起辅导员我们这个专业就业怎么样，她给我回答说研究生特别好找，本科生一般，所以我当时心里的想法是，一定要考研，为了一份好工作。第二天，军训总结大会的时候，我没有去参加，自己一个人在寝室呆着，现在想来，不知道是不是一种遗憾。</p>
+<p><strong>2012年10月后</strong><br>大学的第一个国庆，我们班集体去青城山玩，大概整整玩了一天。国庆的后面跟着彭鸿宇还有她一起去四川省博物馆？宽窄巷子？锦里？玩了一天。再然后记不清了。</p>
+<p>国庆前的某一天C语言课下课回寝室的路上，遇到了龙茂靖，他给我说有个启梦工作室要招新，他现在正要过去面试，我那时候一听可以在里面学技术做项目，也就跟着去了。去了之后一个学长和学姐面试了我们，那时候自己几乎就只有军训期间以及后面时间看的那一点书的编程基础，但是自己态度很认真。面试完后，学长叫我们回去等通知，后面也记不清过了多久，就收到短信说面试通过了，第一次招新大会在国庆后举行，叫我们多看看Java方面的书。于是国庆后面几天我就呆在图书馆了。</p>
+<p>国庆完后，启梦工作室的招新大会就开始了，在那里我第一次看见了对我整个大学有很大影响的几个人(王梓，张飞，张戈，陈鹏飞)。那时候每个新同学都要上去介绍一下自己，现在我已经忘了我当时说的什么了，大致是自己有一个颗追求技术的心，并且能够坚持下来。招新大会之后，每周王梓哥和张飞哥都会给我们新人组织培训，教我们一些Java的知识。这个一直持续到了大一上学期末。某次培训完后，其他人都走了，只剩我，王梓哥，还有另外一个同学，王梓哥就问我们今后是打算读研还是工作？我当时认为要读研，就说读研。然后王梓哥就问我，你读研是为了什么？我说，为了更好的找工作。他大致这么说：你读研的话最后也是工作，如果你本科毕业后直接工作，你在公司干三年，跟你读三年研区别特别大，你最终还是要工作，那么你在公司干三年收获到的绝对要比你在学校多。他当时这句话真的是给了我不少的冲击，所以从那之后我就开始思考到底是读研还是工作了。</p>
+<p>大一上基本的日子基本上是很认真的，教室，图书馆，自习室。我还记得，13年的元旦跨年，大家都去出去玩了，我一个人在教室呆到晚上11点才回寝室。</p>
+<p>和她的话，不知道怎么说，慢慢的就变了。原因是我，原因是她。那会儿，我整天一个人忙着学技术，呆在教室或图书馆，慢慢忽略了她。她也有她的事，她或许觉得我陪她的时间少了，多少有点生气。后面她们班有两个男生喜欢她，她跟其中一个男生一起在图书馆讨论事情，我知道了，心里多少有点不舒服。而她，后面在人人上说另外一个喜欢她的男生对她多好多好，而我不理她。于是我们互相不找对方。。。 后面还是我，我对她已经没有感觉了，就慢慢地不回她信息，不给她打电话。寒假的时候，我也没理她，后面大一下开学，她给我发信息说分手，我看了也没有回那条短信。这件事看来多少是我不对，我不喜欢她了，而以这么一种方式伤害她。</p>
+<p><strong>大一下</strong><br>大一下的日子基本上是呆在工作室的，那时候我就坐在张飞哥的旁边，每天看书，不懂就问他，日子过得很充实。后面两件事：1.陈鹏飞他大四要毕业了，于是回到工作室写毕设，这个时候从工作室其他人口中渐渐知道了陈鹏飞是有多牛，工作室的创始人之一，大二就去阿里巴巴实习，工作室的服务器的搭建者等等。<br>2.张戈他大三找实习去了阿里巴巴，从别人口中得知他大一每天晚上写代码到很晚。这两个人我当时心里特别倾佩，大学期间就这么牛，所以坚定了我毕业了工作的想法。于是，我后面就决定了，大一暑假就不回去了待在学校学点东西。</p>
+<p>到了暑假，范操，易成果他们过来成都找我玩，陪我过了生日，妈妈也过来给我过生日。还认识了唐为哥他们一家人。</p>
+<p><strong>2013年9月后，大二上</strong><br>开学时，王梓哥和张飞哥找到我，要我做启梦工作室的负责人，当时我也就答应了。于是我也像之前学长们做的一样，开始招新，培训别人。</p>
+<p>大二上，是我的一个重要时间点，这个时候我接了人生中的第一个项目，和张飞哥一起去谈的，8000块钱给机电学院？做一个论文提交系统。在做这个项目的同时，天哥那边通过姐姐也接了一个项目，然后把Android平台的开发丢给我来做，这学期，我拿到了人生中的第一桶金，3500？虽然不是很多，但是当时很开心。</p>
+<p><strong>2014年3月后，大二下</strong><br>这个时候的我陷入了特别的孤独，清明节3天假的时候，周围的人全部出去旅游了，室友也走了，我一个人在寝室，写了三天代码，爬网页做了一个我们学校论坛清水河畔的Android客户端。三天时间基本上没出寝室门，饿了就去寝室下面买个手抓饼，也不知道怎么形容当时的心情，孤独而有希望。我还记得，在清明节假期最后一天的晚上，我把我这三天的成果发布在学校论坛上的时候，收获了很多赞赏，那时候高兴，发了疯一样跑出寝室，狂奔了好一段距离。</p>
+<p>后面，大约是五一的时候我接了我的第三个项目，20000块给一个学校的创业团队做一个类似现在饿了么一样做外卖的网站（那个时候饿了么，美团外卖还没有发力，下半年才开始出现）。这个项目是我，代茂哥，还有金振祖一起做的。这个项目做的过程中，我们跟那边发生了一些矛盾，险些没做成。最后这个项目在暑假的时候，那边把所有的钱都付完了，我又通过自己赚到了10000？块的钱。</p>
+<p>大二下，我的工作室的学长，代茂，金振祖，张戈，他们大四下，他们也毕业了。当时的心情很复杂，这些曾经帮助过我，曾经一起相处过这么久的人就要走了，以前我在工作室，总有学长们可以取经，可以问问题，有项目来，也有人指导，后面自己就是学长了，要面对那些新成员，还有很多额外的事。</p>
+<p><strong>2014年7月后，暑假</strong><br>大一的暑假没回家，所以这个暑假我决定一定要回去。7月和易成果去健身，又看了好多场电影，过了自己20岁的生日。8月去广州，在天哥那里玩了几天。后面就回学校了。</p>
+<p><strong>2014年9月后，大三上</strong><br>这一学期，发生了很多事，1.学院创新创业中心那边要把工作室合并 2.和龙茂靖还有自己班的一个同学又接了一个项目，自己又赚了8500？块钱。3.自己花了很多钱买了很多设备：换了电脑，换了显示器，换了SSD，等等。这学期我很迷茫，少了大一大二那会的那种激情。</p>
+<p><strong>2015年3月后。大三下</strong><br>大三下，开始找实习了，寒假在家投了阿里巴巴的实习简历，这里出现了失误，我投错岗位，想投Android和客户端开发投到了Java研发岗，开学第一周就收到了电话面试，面试问得一些比较底层的东西自己都不清楚，结果就是挂了。之后我又投了知乎，豌豆荚，网易，腾讯，豆瓣。豌豆荚挂在了二面，网易一面后要我过去杭州二面，自己不想去就没消息了，豆瓣网上笔试后就没消息了，最后收到了知乎和腾讯的offer，权衡了一下后去了腾讯。</p>
+<p>大三下健身了一个月，后来就没坚持下去了。大三下后面开始运动了，原因是感觉之前的大学生活自己太急切了，忽略了很多东西，工作，学业这些东西落定之后自己应该好好享受一下生活。</p>
+<p><strong>2015年7月－10月，实习</strong><br>在腾讯实习的这几个月，是我生产力特别高的一段时间，由于我是实习生，给我安排的事也不是很多，所以我有大量的时间做自己的事，所以自己就写了很多东西放到GitHub上。这里，第一次，我写的东西上了GitHub的Trending榜，当时真是好高兴。在腾讯实习的日子，我基本是上是早上9点到公司，晚上9:30回出租房，周末的时候，去找过易成果，他也在深圳，在他舅舅的店里面帮忙。和仁广，易成果去大梅沙玩过。坐广深班车去广州找过天哥。妈妈也过来深圳给我过生日。不过大多数的周末都是没事做，就去公司在公司的电脑上打LOL。也和陈一枭去深圳的欢乐谷玩了一天。总结下来就是，实习的日子虽然有时很孤独，但是整体看来还是很充实，很有意义的一段时光。</p>
+<p><strong>2015年10月后，大四上</strong><br>由于暑假实习后直接拿了留用offer，所以我没有参加秋招，这个时候周围大部分的人都在忙，忙着考研，忙着找工作，而自己特别闲，有点格格不入。大四上的日子算是最浑浑噩噩的了，自己好像一下丧失了目标，基本是每天一起床就发现寝室里只有我一个人，室友一个回家了，一个实习去了，一个忙着考研。有段时间特别焦虑，觉得自己这样下去不行，就拼命想着事情做，于是冒出了很多稀奇古怪的想法：给高中班级做一个主题网站吧，有web端，有移动端。写个爬虫爬点美女图吧。写个炫酷的UI动画库吧。每个想法都去实践过，但是弄到一半又失去了兴趣。总之，大四上就是这么一个状态，自己特别闲，特别焦虑，日子过的乱七八糟。</p>
+<p>大四上彻底告别了工作室，原因很简单，人不在了，学长走了，周围的同级的伙伴都各自忙各自的事，现在那个地方再也不是我曾经待过的地方了。</p>
+<p><strong>2016年1月－2月，寒假</strong><br>大学期间最后一个寒假，所以额外珍惜。</p>
+<p><strong>2016年2月－现在</strong><br>最后一个学期了，这学期到现在一直在坚持运动，感觉大四这一年的运动量远远超出了我前三年的总和。大四下，基本上所有的朋友今后的去向都尘埃落定了，所以大家都特别闲，每天待在学校除了写毕设之外也不知道要干嘛。这学期也把驾照给考了。后面的日子可能出去玩玩，然后再逛逛校园，然后毕业。。。</p>
+<p>大学四年，努力过，奋斗过，失落过，低迷过。你问我有没有后悔过，我说有些事有，有些事没有。我不是最优秀的那批人，也不会是碌碌无为的那些人，我曾经羡慕过别人，有过莫名的妄自菲薄，也曾经目空一切，看不起任何人，但那都只是短暂的情绪。我在大学的最后这段时间里特别喜欢一句话：简单爱你心所爱，世界也变得大了起来。</p>
+<p>笑～</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2016/04/30/%E6%B2%A1%E6%9C%89%E5%BC%80%E5%A7%8B%E7%9A%84%E8%AF%9D/" data-id="cuidtxoXRSLrHU8w3sgykNBkt" data-title="没有开始的话" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A0%A1%E5%9B%AD/" rel="tag">校园</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-又来了，这次是一个很Cool的Button" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2015/04/18/%E5%8F%88%E6%9D%A5%E4%BA%86%EF%BC%8C%E8%BF%99%E6%AC%A1%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88Cool%E7%9A%84Button/" class="article-date">
+  <time class="dt-published" datetime="2015-04-17T16:01:30.000Z" itemprop="datePublished">2015-04-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Coding/">Coding</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2015/04/18/%E5%8F%88%E6%9D%A5%E4%BA%86%EF%BC%8C%E8%BF%99%E6%AC%A1%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88Cool%E7%9A%84Button/">又来了，这次是一个很Cool的Button</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>先上图：</p>
+<p><a target="_blank" rel="noopener" href="http://i.imgur.com/ioldIp2.gif" title="arrowdownloadbutton"><img src="http://i.imgur.com/ioldIp2.gif" alt="arrowdownloadbutton"></a></p>
+<p><a target="_blank" rel="noopener" href="http://i.imgur.com/ioldIp2.gif" title="arrowdownloadbutton">arrowdownloadbutton</a></p>
+<p>起因是前几天我在逛dribbble的时候看见了这个<a target="_blank" rel="noopener" href="https://dribbble.com/shots/2012292-Download-Animation">https://dribbble.com/shots/2012292-Download-Animation</a>，觉得awesome！，就动了自己把它实现的念头。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>整体来看有点复杂，不过可以把实现过程按照阶段来划分。</p>
+<p>先下载原图，观察每一帧。</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic1.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic2.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic3.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic4.jpg"></p>
+<h4 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h4><p>就是箭头的柄慢慢压缩，箭头的头慢慢伸展，最后柄合成一个小球，被箭头弹起来。设如图a,b,c,d,e五个点，其中a,e点一开始是重合的。假设在实际绘制中，把这一阶段设为18帧，那么前9帧，先绘制a,b两点慢慢靠近（即a.y-step a.b+step。c,d,e三点慢慢舒张（即，每隔3帧c向左移，d向右移，e向下移，<code>c.x-step b.x+step, e.y + step</code>）。10-12帧，c,d,e连城弧线向上弹，同时小球弹飞（<code>c.x-step c.y-step d.x+step d.y-step e.y-step jump.y - step</code>）。13-16帧，c,d,e弧线慢慢变为水平线，小球落下（<code>jump.y-step</code>）。</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic5.jpg"></p>
+<h4 id="第二阶段："><a href="#第二阶段：" class="headerlink" title="第二阶段："></a>第二阶段：</h4><p>这一阶段由两个动画组成，最外层的progress动画，和圆心水平线的波浪动画。最外层的progress动画比较简单，就是每隔一帧按照当前的progress来绘制圆弧<br>，圆弧的角度为<code>progress/100 * 360</code>。圆心的波浪动画采用三角函数来做，我这里的做法是取了两个周期，</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic6.jpg"></p>
+<p>然后每隔1&#x2F;8个周期选一个点，那么就有17个点。假设每一帧我是隔20ms刷新的，那么我就可以将周期设为160ms。那么这里我就可以求出每一个点的高度随时间变化的函数：<br><code>y = H * sin(Pi/80 * (originalTime + currentTime))</code>。（这里有个小细节，H是随progress的进度变化而变化的）。这里求出每点的高度之后，我在绘制每一帧的时候就可以用连线将各个点连接起来，然后随着帧数的增加，currentTiem也增加，<code>currentTiem=curremtTime+20ms</code>。这样就形成了波浪效果。</p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic7.jpg"></p>
+<p><img src="https://raw.githubusercontent.com/fenjuly/Mini/master/mypiclib/pic8.jpg"></p>
+<h4 id="第三阶段："><a href="#第三阶段：" class="headerlink" title="第三阶段："></a>第三阶段：</h4><p>这一阶段比较简单了，就是波浪线消失，然后慢慢出现小勾。假设这一阶段我定为4帧，那么前3帧（<code>c.x+step c.y+step e.y+step d.x-step d.y-step</code>），第4帧小勾“抖动放大”（<code>c.x-step c.y-step e.y+step d.x+step d.y-step</code>)。</p>
+<p>注：以上的step值都不一定相同，只是用step来代替每次一次的变化量。</p>
+<p>好嘞，以上就是实现过程。<br>然后附上源码地址：<a target="_blank" rel="noopener" href="https://github.com/fenjuly/ArrowDownloadButton">GitHub</a> :)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2015/04/18/%E5%8F%88%E6%9D%A5%E4%BA%86%EF%BC%8C%E8%BF%99%E6%AC%A1%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BE%88Cool%E7%9A%84Button/" data-id="cuidXg0fRgmOYcbobGgGzoZoJ" data-title="又来了，这次是一个很Cool的Button" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" rel="tag">公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%A1%E5%9B%AD/" rel="tag">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%8C%E6%B8%B8/" rel="tag">桌游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation/" style="font-size: 20px;">Animation</a> <a href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" style="font-size: 10px;">公路车</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 10px;">动漫</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 10px;">旅行</a> <a href="/tags/%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">校园</a> <a href="/tags/%E6%A1%8C%E6%B8%B8/" style="font-size: 20px;">桌游</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/">用 AI 来帮我实现一款桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/">公路车调试初体验</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/">缘分会在某一个瞬间戛然而止</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/19/%E6%88%91%E7%9A%84%E6%96%B0%E7%88%B1%E5%A5%BD%E2%80%93%E2%80%93%E6%A1%8C%E6%B8%B8/">我的新爱好––桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/05/%E6%8A%8A%E4%BB%A5%E5%90%8E%E6%94%BE%E5%9C%A8%E6%AD%A4%E5%88%BB/">把以后放在此刻</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 July<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

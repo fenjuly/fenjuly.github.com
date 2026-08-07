@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>用 AI 来帮我实现一款桌游 | [FeN]July&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="以前有很长一段时间我很喜欢单人桌游，在 BGG 上排名很高的单人桌游有灵岛迹和魔法骑士。这两款游戏我都有购入实体版，但每次一个人去开桌游总会嫌麻烦，因为收纳和展开费时费力，久而久之我就将目光瞄向了这些游戏的电子版本。   灵迹岛在这方面做的非常好，它的电子版提供了完整的单人游玩和多人模式，游戏完成度很高，制作精良，最关键，它上架了多个平台：Steam，iOS，Android。我随时随机可以在手">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 AI 来帮我实现一款桌游">
+<meta property="og:url" content="http://fenjuly.com/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/index.html">
+<meta property="og:site_name" content="[FeN]July&#39;s Blog">
+<meta property="og:description" content="以前有很长一段时间我很喜欢单人桌游，在 BGG 上排名很高的单人桌游有灵岛迹和魔法骑士。这两款游戏我都有购入实体版，但每次一个人去开桌游总会嫌麻烦，因为收纳和展开费时费力，久而久之我就将目光瞄向了这些游戏的电子版本。   灵迹岛在这方面做的非常好，它的电子版提供了完整的单人游玩和多人模式，游戏完成度很高，制作精良，最关键，它上架了多个平台：Steam，iOS，Android。我随时随机可以在手">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://fenjuly.com/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/632CF42D73D6A4326E5F798D506523E9.jpg">
+<meta property="og:image" content="http://fenjuly.com/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/4197607DFA48A4497D9BFAFE8BA32792.jpg">
+<meta property="article:published_time" content="2026-08-06T09:29:14.000Z">
+<meta property="article:modified_time" content="2026-08-07T01:46:20.738Z">
+<meta property="article:author" content="July">
+<meta property="article:tag" content="桌游">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://fenjuly.com/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/632CF42D73D6A4326E5F798D506523E9.jpg">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">[FeN]July&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">你听日落的晚钟</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://fenjuly.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-用-AI-来帮我实现一款桌游" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/" class="article-date">
+  <time class="dt-published" datetime="2026-08-06T09:29:14.000Z" itemprop="datePublished">2026-08-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      用 AI 来帮我实现一款桌游
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  以前有很长一段时间我很喜欢单人桌游，在 <a target="_blank" rel="noopener" href="https://boardgamegeek.com/">BGG</a> 上排名很高的单人桌游有灵岛迹和魔法骑士。这两款游戏我都有购入实体版，但每次一个人去开桌游总会嫌麻烦，因为收纳和展开费时费力，久而久之我就将目光瞄向了这些游戏的电子版本。</p>
+<p>  灵迹岛在这方面做的非常好，它的电子版提供了完整的单人游玩和多人模式，游戏完成度很高，制作精良，最关键，它上架了多个平台：Steam，iOS，Android。我随时随机可以在手机上游玩。<br>而魔法骑士则恰恰相反，他没有任何的官方正版电子游戏，有且仅有一个 TTS(Steam 上著名的桌游模拟器)的自动化脚本版本。这个 TTS 版本玩起来对我来说会有几个痛点：</p>
+<ul>
+<li>它只能在 Steam 上玩，无论是在电脑上还是我的 Steam Deck 上玩起来都不是很方便。（电脑限制了我的游玩地点，而 Steam Deck 又太重）</li>
+<li>本质上桌游模拟器只提供了游戏的 UI 模型，最多加上了一些自动化脚本，但游戏的运行实际上还是依靠玩家自己的，而玩家随时会犯错，或者拿不准某项规则，往往容易村规。而一些比较成熟的电子版桌游对规则有严格实现，玩家完全不用担心自己是否在“乱来”</li>
+</ul>
+<p>  而魔法骑士它的可玩性又很高，游戏性很丰富，并且每一局游戏都会是一场不同的冒险，我是十分喜欢这个游戏的，只是苦于没有一个成熟的电子版本，我随时随地开一局的愿望不能实现。</p>
+<p>但转折出现了。今年来 AI 再次出圈，像是年初那会儿的 clawbot 已经让人们意识到 AI 可以真正帮你去完成一项复杂的工作，你只需要去验收成果，并且教他一些技能，让他帮你完成你想做的事。<br>于是乎，让 AI 去帮我实现魔法骑士的电子版游戏的想法就在我脑海里出现了，于是我就开始行动了。</p>
+<p>  用 AI 去实现一款桌游是有一个天然的优势的，大多数高分流行的桌游都有一本逻辑严密的规则书，我们并不需要去充当一个产品经理或者游戏设计师的角色（往往这两个角色的工作是很难的，你很难表达清楚自己意思，或者直接把你的需求说清楚）。而现在我只需要把规则书喂给 AI，那么它就可以自己去读规则去实现游戏了，这简直太完美了。事实上我在迭代这个游戏的过程中这部分都也确实没怎么操心，AI 很容易就实现了整套游戏的框架。<br> 我只需要不断的去检查它实现结果，然后引导它搭建一套完整的测试框架以及补充相应的测试用例。每当他实现一个功能的同时，让它记得去补充测试用例，同时整跑完整个测试流程，整套流程下来遇到问题就修问题，直到测试通过，那么才算一次合格的迭代。</p>
+<p>  整套游戏的搭建用了最简单快速高效的方案，一套运行在浏览器的网页。在后续游戏框架都迭代得比较完善的时候，我又让 AI 加上了生成 Android APK 的脚本，由于是浏览器套壳游戏，很容易就移植到了 Android 上。目前整个游戏的流程基本上跑通了，剩下的工作就是我多玩几把，把交互做到更好，方便我更好的在移动端操作，同时，尽可能换一套漂亮的 UI。</p>
+<p>  补几张游戏的截图：</p>
+<img src="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/632CF42D73D6A4326E5F798D506523E9.jpg" class="" title="启动图">
+
+<img src="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/4197607DFA48A4497D9BFAFE8BA32792.jpg" class="" title="游戏主画面">
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://fenjuly.com/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/" data-id="cuid9moghfOJHdFi18equQ9VH" data-title="用 AI 来帮我实现一款桌游" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A1%8C%E6%B8%B8/" rel="tag">桌游</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">公路车调试初体验</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Coding/">Coding</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Animation/" rel="tag">Animation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" rel="tag">公路车</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%A8%E6%BC%AB/" rel="tag">动漫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%85%E8%A1%8C/" rel="tag">旅行</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%A1%E5%9B%AD/" rel="tag">校园</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A1%8C%E6%B8%B8/" rel="tag">桌游</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Animation/" style="font-size: 20px;">Animation</a> <a href="/tags/%E5%85%AC%E8%B7%AF%E8%BD%A6/" style="font-size: 10px;">公路车</a> <a href="/tags/%E5%8A%A8%E6%BC%AB/" style="font-size: 10px;">动漫</a> <a href="/tags/%E6%97%85%E8%A1%8C/" style="font-size: 10px;">旅行</a> <a href="/tags/%E6%A0%A1%E5%9B%AD/" style="font-size: 10px;">校园</a> <a href="/tags/%E6%A1%8C%E6%B8%B8/" style="font-size: 20px;">桌游</a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">April 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">March 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/06/%E7%94%A8-AI-%E6%9D%A5%E5%B8%AE%E6%88%91%E5%AE%9E%E7%8E%B0%E4%B8%80%E6%AC%BE%E6%A1%8C%E6%B8%B8/">用 AI 来帮我实现一款桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/10/%E5%AD%A6%E4%B9%A0%E4%BA%86%E6%80%8E%E4%B9%88%E8%B0%83%E8%AF%95%E5%85%AC%E8%B7%AF%E8%BD%A6%E5%8F%98%E9%80%9F%E8%A3%85%E7%BD%AE/">公路车调试初体验</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/27/%E7%BC%98%E5%88%86%E4%BC%9A%E5%9C%A8%E6%9F%90%E4%B8%80%E4%B8%AA%E7%9E%AC%E9%97%B4%E6%88%9B%E7%84%B6%E8%80%8C%E6%AD%A2/">缘分会在某一个瞬间戛然而止</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/19/%E6%88%91%E7%9A%84%E6%96%B0%E7%88%B1%E5%A5%BD%E2%80%93%E2%80%93%E6%A1%8C%E6%B8%B8/">我的新爱好––桌游</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/05/%E6%8A%8A%E4%BB%A5%E5%90%8E%E6%94%BE%E5%9C%A8%E6%AD%A4%E5%88%BB/">把以后放在此刻</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 July<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
